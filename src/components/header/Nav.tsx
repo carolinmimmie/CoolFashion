@@ -1,6 +1,7 @@
 import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import React from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
 
 interface Props {
   /**
@@ -55,7 +56,7 @@ const Nav = (props: Props) => {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            {/* <MenuIcon /> */}
+            <MenuIcon /> 
           </IconButton>
           <Typography
             variant="h6"
@@ -72,17 +73,7 @@ const Nav = (props: Props) => {
               </Button>
             ))}
           </Box>
-          <Box
-      component="form"
-      sx={{
-        '& > :not(style)': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-
-      <TextField id="standard-basic" label="Standard" variant="standard" />
-    </Box>
+         
         </Toolbar>
       </AppBar>
       <Box component="nav">
