@@ -1,4 +1,5 @@
 import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from '@mui/material';
+import TextField from '@mui/material/TextField';
 import React from 'react'
 
 interface Props {
@@ -59,10 +60,10 @@ const Nav = (props: Props) => {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 2, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 0.1, display: { xs: 'none', sm: 'block' } }}
             className="Logga"
           >
-          C0oL FaSHiON
+          CooL Fashion
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
@@ -71,6 +72,17 @@ const Nav = (props: Props) => {
               </Button>
             ))}
           </Box>
+          <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+
+      <TextField id="standard-basic" label="Standard" variant="standard" />
+    </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav">
