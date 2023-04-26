@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
+import Header from "./components/header/Header";
 import ProductPage from "./components/product-page/ProductPage";
 
 function App() {
   return (
-    <div>
-      <p>Super Cool Fashion</p>
-      <ProductPage></ProductPage>
+    <div className="App">
+     <Header></Header>
+     <ProductPage></ProductPage>
     </div>
   );
 }
