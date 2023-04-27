@@ -12,6 +12,11 @@ flex-direction: row;
   max-height: "30px"
 }
 
+.serchfieldxsscreen{
+ margin-left: -1rem;
+ margin-top: -0.5rem;
+}
+
 
 @media (max-width: 900px){
 

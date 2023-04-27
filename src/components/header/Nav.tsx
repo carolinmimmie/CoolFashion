@@ -92,6 +92,7 @@ const Nav = (props: Props) => {
 
   const container = window !== undefined ? () => window().document.body : undefined;
   return (
+    <>
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav" sx={{bgcolor: "black"}}>
         <Toolbar  sx={{ justifyContent: { xs: 'space-between', md: 'flex-start' } }}>
@@ -143,6 +144,20 @@ const Nav = (props: Props) => {
           </Box>
         
         </Toolbar>
+          <Box className="serchfieldxsscreen" sx={{display: {xs: "block", sm: "block", md: "none"}}}>
+          <Search sx={{}} >
+            <SearchIconWrapper>
+            <SearchIcon /> 
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Sök produkter"
+              inputProps={{ 'aria-label': 'search' }}
+              className="serchfield"
+             
+            />
+          </Search>
+        
+          </Box>
       </AppBar>
       <Box component="nav">
         <Drawer
@@ -165,7 +180,7 @@ const Nav = (props: Props) => {
         <Toolbar />
       </Box>
       </Box>
-
+       </>
   )
 }
 
