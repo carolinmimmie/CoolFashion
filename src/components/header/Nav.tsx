@@ -17,7 +17,7 @@ interface Props {
   window?: () => Window;
 }
 const drawerWidth = 240;
-const navItems = ['Women/men', 'Products', 'bestsellers', 'Sale'];
+const navItems = ['Women', "Men", 'Products', 'bestsellers', 'Sale'];
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -94,7 +94,7 @@ const Nav = (props: Props) => {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav" sx={{bgcolor: "black"}}>
-        <Toolbar>
+        <Toolbar  sx={{ justifyContent: { xs: 'space-between', md: 'flex-start' } }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -102,14 +102,14 @@ const Nav = (props: Props) => {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'block', md: "none" }, flexGrow: {}}}
           >
-            <MenuIcon /> 
+            <MenuIcon sx={{mt: 0.7}}/> 
           </IconButton>
 
         
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 0.05, display: { xs: 'none', sm: 'block'  } }}
+            sx={{ flexGrow: 0.05, display: { xs: 'block', sm: 'block'  } }}
             className="Logga"
           >
           COOL FASHION
