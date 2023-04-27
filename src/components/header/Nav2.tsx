@@ -8,6 +8,11 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import { List, ListItem, ListItemText } from '@mui/material';
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -50,11 +55,13 @@ const Search = styled('div')(({ theme }) => ({
       },
     },
   }));
+
+  const navItems = ['Women/men', 'Products', 'bestsellers', 'Sale'];
   
 
 const Nav2 = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{  }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -64,18 +71,18 @@ const Nav2 = () => {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-           <MenuIcon /> 
+           <MenuIcon  sx={{display: { xs: 'block', sm: 'none' }}}/> 
           </IconButton>
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{  flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             CooL Fashion
           </Typography>
-          
-          <Search>
+
+          <Search sx={{}}>
             <SearchIconWrapper>
             <SearchIcon /> 
             </SearchIconWrapper>
@@ -84,6 +91,12 @@ const Nav2 = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <Box sx={{margin: "auto", display:{ xs: 'none', sm: 'block' } }}> 
+            <FavoriteBorderIcon sx={{ml: 2}}/>
+            <PersonOutlineIcon sx={{ml: 2}}/>
+            <WorkOutlineIcon sx={{ml: 2}}/>
+           
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

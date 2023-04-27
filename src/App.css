@@ -2,6 +2,26 @@
 
 .logga{
   display: flex;
-  justify-content: flex-start;
+  
 
+}
+
+.boxserchandicon{
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+}
+
+.serchfield{
+  max-width: "200px";
+  max-height: "30px"
+}
+
+
+@media (max-width: 900px){
+
+  .logga{
+    display: flex;
+    justify-content: center;
+  }
 }
