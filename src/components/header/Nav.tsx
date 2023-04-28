@@ -83,23 +83,23 @@ const Nav = (props: Props) => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const drawer = (
-    <div>
-      <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-        <Typography variant="h6" sx={{ my: 2 }}>
-          COOL FASHION
-        </Typography>
-        <Divider />
-        <List sx={{ ml: 2 }}>
-          {navItems.map((item) => (
-            <ListItem key={item} disablePadding>
-              <ListItemText primary={item} />
-            </ListItem>
-          ))}
-        </List>
-      </Box>
-    </div>
-  );
+  // const drawer = (
+  //   <div>
+  //     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+  //       <Typography variant="h6" sx={{ my: 2 }}>
+  //         COOL FASHION
+  //       </Typography>
+  //       <Divider />
+  //       <List sx={{ ml: 2 }}>
+  //         {navItems.map((item) => (
+  //           <ListItem key={item} disablePadding>
+  //             <ListItemText primary={item} />
+  //           </ListItem>
+  //         ))}
+  //       </List>
+  //     </Box>
+  //   </div>
+  // );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -134,22 +134,25 @@ const Nav = (props: Props) => {
             </Typography>
 
             <BasicMenu></BasicMenu>
+            <BasicMenu></BasicMenu>
+            <BasicMenu></BasicMenu>
+            <BasicMenu></BasicMenu>
 
-            <Box
+            {/* <Box
               sx={{
                 display: { xs: "none", sm: "none", md: "block" },
                 flexGrow: { sm: 1 },
               }}
             >
               {navItems.map((item) => (
-                <Button key={item} sx={{ color: "#fff" }}>
+                <BasicMenu key={item} sx={{ color: "#fff" }}>
                   {item}
-                </Button>
+                </BasicMenu>
               ))}
-            </Box>
+            </Box> */}
 
             <Box className="boxserchandicon" sx={{}}>
-              <Search sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
+              {/* <Search sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
                 <SearchIconWrapper>
                   <SearchIcon />
                 </SearchIconWrapper>
@@ -163,14 +166,14 @@ const Nav = (props: Props) => {
                 <FavoriteBorderIcon sx={{ ml: 2 }} />
                 <PersonOutlineIcon sx={{ ml: 2 }} />
                 <WorkOutlineIcon sx={{ ml: 2 }} />
-              </Box>
+              </Box> */}
             </Box>
           </Toolbar>
           <Box
             className="serchfieldxsscreen"
             sx={{ display: { xs: "block", sm: "block", md: "none" } }}
           >
-            <Search sx={{}}>
+            {/* <Search sx={{}}>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -179,7 +182,7 @@ const Nav = (props: Props) => {
                 inputProps={{ "aria-label": "search" }}
                 className="serchfield"
               />
-            </Search>
+            </Search> */}
           </Box>
         </AppBar>
         <Box component="nav">
@@ -199,7 +202,7 @@ const Nav = (props: Props) => {
               },
             }}
           >
-            {drawer}
+            {/* {drawer} */}
           </Drawer>
         </Box>
         {/* <Box component="main" sx={{ p: 3 }}>
