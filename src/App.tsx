@@ -7,9 +7,8 @@ import ProductPage from "./components/product-page/ProductPage";
 function App() {
   return (
     <div className="App">
-     <Header></Header>
-     <Landingpage></Landingpage>
-     <ProductPage></ProductPage>
+      <Header></Header>
+      <Landingpage></Landingpage>
     </div>
   );
 }

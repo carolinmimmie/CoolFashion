@@ -31,7 +31,7 @@ interface Props {
   window?: () => Window;
 }
 const drawerWidth = 240;
-const navItems = ["Women", "Men", "Products", "Bestsellers", "Sale"];
+const navItems = ["Link", "Link", "Link", "Link", "Link"];
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
