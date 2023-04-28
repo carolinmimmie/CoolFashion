@@ -1,6 +1,11 @@
-.hero{
-  border: solid;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
   height: 700px;
+  background-color: grey;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -8,27 +13,22 @@
   position: relative;
 }
 
-
-
-.boxserchandicon{
-display: flex;
-flex-direction: row;
+.boxserchandicon {
+  display: flex;
+  flex-direction: row;
 }
 
-.serchfield{
+.serchfield {
   max-width: "200px";
-  max-height: "30px"
+  max-height: "30px";
 }
 
-.serchfieldxsscreen{
- margin-left: -1rem;
- margin-top: -0.5rem;
+.serchfieldxsscreen {
+  margin-left: -1rem;
+  margin-top: -0.5rem;
 }
 
-
-@media (max-width: 900px){
-
-  .logga{
-   
+@media (max-width: 900px) {
+  .logga {
   }
 }
