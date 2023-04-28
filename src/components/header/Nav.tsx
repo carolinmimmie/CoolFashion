@@ -17,7 +17,7 @@ interface Props {
   window?: () => Window;
 }
 const drawerWidth = 240;
-const navItems = ['Women', "Men", 'Products', 'bestsellers', 'Sale'];
+const navItems = ['Women', "Men", 'Products', 'Bestsellers', 'Sale'];
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -74,10 +74,10 @@ const Nav = (props: Props) => {
         <div>
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        C0oL FaSHiON
+    COOL FASHION
       </Typography>
       <Divider />
-     <List>
+     <List sx={{ml: 2}}>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             
@@ -108,9 +108,9 @@ const Nav = (props: Props) => {
 
         
           <Typography
-            variant="h6"
+            variant="h1"
             component="div"
-            sx={{ flexGrow: 0.05, display: { xs: 'block', sm: 'block'  } }}
+            sx={{ flexGrow: 0.05, display: { xs: 'block', sm: 'block'  }, fontSize: "20px"}}
             className="Logga"
           >
           COOL FASHION
