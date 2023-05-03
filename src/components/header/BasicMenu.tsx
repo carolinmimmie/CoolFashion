@@ -6,12 +6,7 @@ import DenseMenu from "./DenseMenu";
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-
   const open = Boolean(anchorEl);
-
-  // const [hoverAnchorEl, setHoverAnchorEl] = React.useState<null | HTMLElement>(
-  //   null
-  // );
 
   const [isHovering, setIsHovering] = React.useState<Boolean>(false);
 
@@ -20,13 +15,10 @@ export default function BasicMenu() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+    setIsHovering(false);
   };
-
   const handleMouseOver = () => {
     setIsHovering(true);
-  };
-  const handleMouseOut = () => {
-    setIsHovering(false);
   };
 
   return (
@@ -50,15 +42,10 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-          Link
-        </MenuItem>
+        <MenuItem onMouseOver={handleMouseOver}>Link</MenuItem>
         {isHovering && (
           <div>
-            <DenseMenu
-            // onMouseOver={handleMouseOver}
-            // onMouseOut={handleMouseOut}
-            ></DenseMenu>
+            <DenseMenu></DenseMenu>
           </div>
         )}
       </Menu>
