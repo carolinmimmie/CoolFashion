@@ -22,7 +22,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import BasicMenu from "./Menu";
+import BasicMenu from "./BasicMenu";
 
 interface Props {
   /**

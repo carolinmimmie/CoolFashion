@@ -2,15 +2,31 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import DenseMenu from "./DenseMenu";
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+
+  // const [hoverAnchorEl, setHoverAnchorEl] = React.useState<null | HTMLElement>(
+  //   null
+  // );
+
+  const [isHovering, setIsHovering] = React.useState<Boolean>(false);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+  const handleMouseOut = () => {
+    setIsHovering(false);
   };
 
   return (
@@ -34,9 +50,17 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Link</MenuItem>
-        <MenuItem onClick={handleClose}>Link</MenuItem>
-        <MenuItem onClick={handleClose}>Link</MenuItem>
+        <MenuItem onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+          Link
+        </MenuItem>
+        {isHovering && (
+          <div>
+            <DenseMenu
+            // onMouseOver={handleMouseOver}
+            // onMouseOut={handleMouseOut}
+            ></DenseMenu>
+          </div>
+        )}
       </Menu>
     </div>
   );
