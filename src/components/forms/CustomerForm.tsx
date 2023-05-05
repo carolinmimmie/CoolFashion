@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { IAllProducts } from "../../interfaces";
 //Interface for formdata
@@ -12,11 +11,12 @@ const CustomerForm = () => {
     //Satt mina use-state variablar till tomma som original
     id: "",
     category: "",
-    garment: "",
+    image: "",
     gender: "",
+    liked: false,
+    news: false,
+    price: 99,
     title: "string",
-    img:"string",
- 
   });
   //Känner av att något händer i input-fältet
   const handleChange = (
@@ -75,7 +75,7 @@ const CustomerForm = () => {
             type="file"
             id=" productimage"
             name=" productimage"
-            value={formData.img}
+            value={formData.image}
             onChange={handleChange}
           />
         </div>

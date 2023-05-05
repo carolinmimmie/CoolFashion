@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { IAllProducts, IClothes } from "../../interfaces";
-import { getAllProducts, getClothes } from "../../Api";
+import { IAllProducts, IContactInformation } from "../../interfaces";
+import { getAllProducts, getContactInformation } from "../../Api";
+import { imageListClasses } from "@mui/material";
 
 const ProductPage = () => {
   const [allProducts, setAllProducts] = useState<IAllProducts[]>([]);
-  const [clothes, setClothes] = useState<IClothes[]>([]);
+  const [contactInformation, setContactInformation] = useState<
+    IContactInformation[]
+  >([]);
 
   useEffect(() => {
     const fetchAllProducts = async () => {
@@ -12,32 +15,42 @@ const ProductPage = () => {
       setAllProducts(products);
     };
 
-    const fetchClothes = async () => {
-      const products = await getClothes();
-      setClothes(products);
+    const fetchContactInformation = async () => {
+      const contactInformation = await getContactInformation();
+      setContactInformation(contactInformation);
     };
     fetchAllProducts();
-    fetchClothes();
+    fetchContactInformation();
   }, []);
+
   return (
     <div>
       <p></p>
       {allProducts.map((x) => (
-        <p>
-          {`Här är hämtat från Products collection: 
+        <div>
+          <img
+            src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png"
+            alt=""
+            width={40}
+            height={40}
+          />
+          <p>
+            {`Här är hämtat från All Products collection: 
           ${x.category}, 
-          ${x.garment}, 
           ${x.gender}, 
-          ${x.title}`}
-        </p>
+          ${x.news},
+          ${x.price},
+          ${x.title},`}
+          </p>
+        </div>
       ))}
 
-      {clothes.map((x) => (
+      {contactInformation.map((x) => (
         <p>
           {`Här är hämtat från Clothes collection: 
-        ${x.garment}, 
-        ${x.gender}, 
-        ${x.title}`}
+        ${x.email}, 
+        ${x.textfield}, 
+        ${x.username}`}
         </p>
       ))}
     </div>

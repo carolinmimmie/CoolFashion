@@ -11,10 +11,10 @@ const Landingpage = () => {
     <div>
       <Herolandingpage></Herolandingpage>
       <ContactForm></ContactForm>
-      <CustomerForm></CustomerForm>
+      {/* <CustomerForm></CustomerForm> */}
       <CardCategories></CardCategories>
       <CardProducts></CardProducts>
-      {/* <ProductPage></ProductPage> */}
+      <ProductPage></ProductPage>
     </div>
   );
 };

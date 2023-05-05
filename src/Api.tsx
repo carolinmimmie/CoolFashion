@@ -10,9 +10,9 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "./firebase.config";
-import { IAllProducts, IClothes } from "./interfaces";
+import { IAllProducts, IContactInformation } from "./interfaces";
 
-const AllProductsCollectionRef = collection(db, "Products");
+const AllProductsCollectionRef = collection(db, "All Products");
 
 export const getAllProducts = async () => {
   const data = await getDocs(AllProductsCollectionRef);
@@ -23,12 +23,12 @@ export const getAllProducts = async () => {
   }));
 };
 
-const ClothesCollectionRef = collection(db, "Clothes");
+const ContactInformationCollectionRef = collection(db, "Contact Information");
 
-export const getClothes = async () => {
-  const data = await getDocs(ClothesCollectionRef);
+export const getContactInformation = async () => {
+  const data = await getDocs(ContactInformationCollectionRef);
   return data.docs.map((doc) => ({
-    ...(doc.data() as IClothes),
+    ...(doc.data() as IContactInformation),
 
     id: doc.id,
   }));

@@ -1,17 +1,19 @@
 interface IAllProducts {
   id: string;
   category: string;
-  garment: string;
+  image: string;
   gender: string;
+  liked: boolean;
+  news: boolean;
+  price: number;
   title: string;
-  img:string;
 }
 
-interface IClothes {
+interface IContactInformation {
   id: string;
-  garment: string;
-  gender: string;
-  title: string;
+  email: string;
+  textfield: string;
+  username: string;
 }
 
-export type { IAllProducts, IClothes };
+export type { IAllProducts, IContactInformation };
