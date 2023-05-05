@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 //Interface for formdata
 interface IFormData {
@@ -22,13 +23,13 @@ const ContactForm = () => {
     event?.preventDefault();
   };
   return (
-    <div className="container">
+    <div className="container-form">
       <h2>Kontaktformulär</h2>
       <form className="form" onSubmit={handleSubmit}>
-        <div>
+        <div className="form-box">
           <label htmlFor="username">Namn:</label>
         </div>
-        <div>
+        <div className="form-box">
           <input
             type="text"
             id="username"
@@ -37,10 +38,10 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-box">
           <label htmlFor="email">Email:</label>
         </div>
-        <div>
+        <div className="form-box">
           <input
             type="text"
             id="email"
@@ -49,10 +50,10 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="form-box">
           <label htmlFor="text">Meddelande:</label>
         </div>
-        <div>
+        <div className="form-box">
           <input
             type="textarea"
             id="textfield"
@@ -62,8 +63,8 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <button type="submit">Submit </button>
+        <div className="form-box">
+          <button type="submit">Skicka </button>
         </div>
       </form>
     </div>

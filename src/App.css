@@ -35,6 +35,17 @@ body {
   margin-top: -0.5rem;
 }
 
+/* forms */
+.container-form {
+  background-color: rgb(223, 223, 220);
+  width: 500px;
+  margin: auto;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 1rem;
+  padding-bottom: 3rem;
+}
+
 @media (max-width: 900px) {
   .logga {
   }
