@@ -4,6 +4,7 @@ interface IAllProducts {
   garment: string;
   gender: string;
   title: string;
+  img:string;
 }
 
 interface IClothes {

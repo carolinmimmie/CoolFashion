@@ -1,17 +1,22 @@
 
 import React, { useState } from "react";
+import { IAllProducts } from "../../interfaces";
 //Interface for formdata
-interface IFormData {
-  productname: string;
-  productcategory: string;
-  productimage: string;
-}
+// interface IFormData {
+//   title: string;
+//   category: string;
+//   img: string;
+// }
 const CustomerForm = () => {
-  const [formData, setFormData] = useState<IFormData>({
+  const [formData, setFormData] = useState<IAllProducts>({
     //Satt mina use-state variablar till tomma som original
-    productname: "",
-    productcategory: "",
-    productimage: "",
+    id: "",
+    category: "",
+    garment: "",
+    gender: "",
+    title: "string",
+    img:"string",
+ 
   });
   //Känner av att något händer i input-fältet
   const handleChange = (
@@ -36,7 +41,7 @@ const CustomerForm = () => {
             type="text"
             id="productname"
             name="productname"
-            value={formData.productname}
+            value={formData.title}
             onChange={handleChange}
           />
         </div>
@@ -44,7 +49,7 @@ const CustomerForm = () => {
           <select
             id="productcategory"
             name="productcategory"
-            value={formData.productcategory}
+            value={formData.category}
             onChange={handleChange}
           >
             <option value="">Välj kategori:</option>
@@ -70,7 +75,7 @@ const CustomerForm = () => {
             type="file"
             id=" productimage"
             name=" productimage"
-            value={formData.productimage}
+            value={formData.img}
             onChange={handleChange}
           />
         </div>
