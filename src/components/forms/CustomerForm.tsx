@@ -36,21 +36,21 @@ const CustomerForm = () => {
       <h2>Lägg till Produkt</h2>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-box">
-          <label htmlFor="productname">Produktnamn:</label>
+          <label htmlFor="title">Produktnamn:</label>
         </div>
         <div className="form-box">
           <input
             type="text"
-            id="productname"
-            name="productname"
+            id="title"
+            name="title"
             value={formData.title}
             onChange={handleChange}
           />
         </div>
         <div className="form-box">
           <select
-            id="productcategory"
-            name="productcategory"
+            id="category"
+            name="category"
             value={formData.category}
             onChange={handleChange}
           >
@@ -70,13 +70,13 @@ const CustomerForm = () => {
           </select>
         </div>
         <div className="form-box">
-          <label htmlFor="text">Produktbild:</label>
+          <label htmlFor="image">Produktbild:</label>
         </div>
         <div className="form-box">
           <input
             type="file"
-            id=" productimage"
-            name=" productimage"
+            id="image"
+            name="image"
             value={formData.image}
             onChange={handleChange}
           />
