@@ -11,9 +11,9 @@ interface IAllProducts {
 
 interface IContactInformation {
   id: string;
+  username: string;
   email: string;
   textfield: string;
-  username: string;
 }
 
 export type { IAllProducts, IContactInformation };

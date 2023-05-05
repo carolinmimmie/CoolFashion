@@ -33,3 +33,23 @@ export const getContactInformation = async () => {
     id: doc.id,
   }));
 };
+
+export const createProduct = async (product: IAllProducts) => {
+  await addDoc(AllProductsCollectionRef, {
+    category: product.category,
+    image: product.image,
+    gender: product.gender,
+    liked: product.liked,
+    news: product.news,
+    price: product.price,
+    title: product.title,
+  });
+};
+
+export const createContactInformation = async (info: IContactInformation) => {
+  await addDoc(ContactInformationCollectionRef, {
+    username: info.username,
+    email: info.email,
+    textfield: info.textfield,
+  });
+};

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { IAllProducts, IContactInformation } from "../../interfaces";
 import { getAllProducts, getContactInformation } from "../../Api";
-import { imageListClasses } from "@mui/material";
+import { Box, imageListClasses } from "@mui/material";
+import CardProducts from "../produkts/CardProducts";
 
 const ProductPage = () => {
   const [allProducts, setAllProducts] = useState<IAllProducts[]>([]);
@@ -27,12 +28,12 @@ const ProductPage = () => {
     <div>
       <p></p>
       {allProducts.map((x) => (
-        <div>
+        <Box sx={{ maxWidth: 150, mb: 1, mt: 1, ml: 10, border: 1 }}>
           <img
             src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png"
             alt=""
-            width={40}
-            height={40}
+            width={150}
+            height={150}
           />
           <p>
             {`Här är hämtat från All Products collection: 
@@ -42,7 +43,7 @@ const ProductPage = () => {
           ${x.price},
           ${x.title},`}
           </p>
-        </div>
+        </Box>
       ))}
 
       {contactInformation.map((x) => (

@@ -1,14 +1,11 @@
-
 import React, { useState } from "react";
-//Interface for formdata
-interface IFormData {
-  username: string;
-  email: string;
-  textfield: string;
-}
+import { IContactInformation } from "../../interfaces";
+import { createContactInformation } from "../../Api";
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState<IFormData>({
+  const [formData, setFormData] = useState<IContactInformation>({
     //Satt mina use-state variablar till tomma som original
+    id: "",
     username: "",
     email: "",
     textfield: "",
@@ -21,6 +18,7 @@ const ContactForm = () => {
   //Knappen i form
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
+    createContactInformation(formData);
   };
   return (
     <div className="container-form">

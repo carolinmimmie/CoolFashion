@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IAllProducts } from "../../interfaces";
+import { createProduct } from "../../Api";
 //Interface for formdata
 // interface IFormData {
 //   title: string;
@@ -14,9 +15,9 @@ const CustomerForm = () => {
     image: "",
     gender: "",
     liked: false,
-    news: false,
+    news: true,
     price: 99,
-    title: "string",
+    title: "",
   });
   //Känner av att något händer i input-fältet
   const handleChange = (
@@ -28,6 +29,7 @@ const CustomerForm = () => {
   //Knappen i form
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
+    createProduct(formData);
   };
   return (
     <div className="container-form">
