@@ -6,16 +6,11 @@ import {
   faMapMarkerAlt,
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
 
 const Carousel = () => {
   return (
     <div className="container">
+      <h3>Populära Kategorier</h3>
       <div
         id="myCarousel"
         className="carousel slide"
@@ -46,6 +41,7 @@ const Carousel = () => {
                     Title 1
                   </div>
                   <div>399,00 kr</div>
+
                   <div className="heart-icon">
                     <FontAwesomeIcon icon={faHeart} />
                   </div>
