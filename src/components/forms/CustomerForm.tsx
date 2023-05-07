@@ -3,6 +3,7 @@ import { IAllProducts } from "../../interfaces";
 import { createProduct } from "../../Api";
 import { storage } from "../../firebase.config";
 import { ref } from "firebase/storage";
+import { v4 as uuidv4 } from "uuid";
 
 const CustomerForm = () => {
   const [formData, setFormData] = useState<IAllProducts>({
