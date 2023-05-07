@@ -1,16 +1,26 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faHeart, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
-
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faHeart,
+  faMapMarkerAlt,
+  faPhoneAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Herolandingpage = () => {
   return (
     <div>
-    <div className='hero'></div>
-    <div className='container'>
-      {/* H&M Carousel med 3 slides ---START--- Mili */} 
-      <div id="myCarousel" className="carousel slide" data-interval="false" data-ride="carousel" >
+      <div className="hero"></div>
+      <div className="container">
+        {/* H&M Carousel med 3 slides ---START--- Mili */}
+
+        {/* <div id="myCarousel" className="carousel slide" data-interval="false" data-ride="carousel" >
         <ol className="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -136,14 +146,12 @@ const Herolandingpage = () => {
             <span className="sr-only">Next</span>
           </a>
         </div>
-      </div>
-    {/* H&M Carousel med 3 slides ---END--- Mili */} 
+      </div> */}
+        {/* H&M Carousel med 3 slides ---END--- Mili */}
 
+        {/* Lorem Ipsum Text ---START--- Mili */}
 
-
-
-    {/* Lorem Ipsum Text ---START--- Mili */}
-      <div className="container mt-5">
+        {/* <div className="container mt-5">
         <p><strong className="stronger">Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit. Sed euismod faucibus lectus, in rutrum nulla. 
           Suspendisse potenti. Ut eget ullamcorper nisl. Morbi sodales, lectus at hendrerit rutrum, eros nisl efficitur nulla, 
           ac iaculis metus enim vel quam. Donec vehicula dui vel ipsum gravida.
@@ -152,15 +160,13 @@ const Herolandingpage = () => {
           eros risus blandit quam, vel interdum urna lorem non enim. Pellentesque eu velit ultrices, varius neque ac, tempor mi. 
           Nam pellentesque velit ac enim sagittis, vel fringilla ipsum dapibus. Curabitur efficitur.
         </p>
-      </div>
-    {/* Lorem Ipsum Text ---END--- Mili */}  
+      </div> */}
 
+        {/* Lorem Ipsum Text ---END--- Mili */}
 
+        {/* Ny större carousel med 4 slides ---START--- Mili */}
 
-
-
-      {/* Ny större carousel med 4 slides ---START--- Mili */}
-<div className="container mt-5">
+        {/* <div className="container mt-5">
   <div id="newCarousel" className="carousel slide" data-interval="false" data-ride="carousel">
     <ol className="carousel-indicators">
       <li data-target="#newCarousel" data-slide-to="0" className="active"></li>
@@ -259,14 +265,13 @@ const Herolandingpage = () => {
       <span className="sr-only">Next</span>
     </a>
   </div>
-</div>
-{/* Ny större carousel med 4 slides ---END--- Mili */} 
+</div> */}
 
+        {/* Ny större carousel med 4 slides ---END--- Mili */}
 
+        {/* Exempel på Footer "Om vi känner för det" ---START--- */}
 
-
-{/* Exempel på Footer "Om vi känner för det" ---START--- */} 
-<footer className="footer py-5 mt-5" style={{ backgroundColor: '#1a1a1a', color: '#fff' }}>
+        {/* <footer className="footer py-5 mt-5" style={{ backgroundColor: '#1a1a1a', color: '#fff' }}>
       <div className="container">
         <div className="row">
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
@@ -308,13 +313,12 @@ const Herolandingpage = () => {
         </div>
       </div>
       <p className="text-secondary mt-5 text-center">&copy; 2023 Grupp E. All rights reserved.</p>
-    </footer>
-    {/* Exempel på Footer "Om vi känner för det" ---END--- */} 
+    </footer> */}
 
-</div>
-);
+        {/* Exempel på Footer "Om vi känner för det" ---END--- */}
+      </div>
+    </div>
+  );
 };
 
 export default Herolandingpage;
-
-

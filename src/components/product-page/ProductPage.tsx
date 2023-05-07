@@ -49,7 +49,7 @@ const ProductPage = () => {
 
       {contactInformation.map((x) => (
         <p>
-          {`Här är hämtat från Clothes collection: 
+          {`Här är hämtat från Contact Information collection: 
         ${x.email}, 
         ${x.textfield}, 
         ${x.username}`}

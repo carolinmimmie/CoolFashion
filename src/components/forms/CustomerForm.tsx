@@ -97,10 +97,9 @@ const CustomerForm = () => {
             id="image"
             name="image"
             // value={formData.image}
+            // Om den här inte är utkommenterad så syns det inte
+            // vilken fil man har valt i formuläret på sidan?
             onChange={handleImage}
-            // onChange={(event) => {
-            //   setImageUpload(event.target.files[0]);
-            // }}
           />
         </div>
         <div className="form-box">
