@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { IAllProducts } from "../../interfaces";
 import { createProduct } from "../../Api";
 import { storage } from "../../firebase.config";
-import { ref } from "firebase/storage";
-import { v4 as uuidv4 } from "uuid";
+import { ref, uploadBytes } from "firebase/storage";
+import { v4 } from "uuid";
 
 const CustomerForm = () => {
   const [formData, setFormData] = useState<IAllProducts>({
@@ -18,12 +18,24 @@ const CustomerForm = () => {
     title: "",
   });
 
-  const [imageUpload, setImageUpload] = useState(null);
+  const [imageUpload, setImageUpload] = useState<any>(null);
 
-  // const uploadImage = () => {
-  //   if (imageUpload == null) return;
-  //   const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-  // };
+  const uploadImage = () => {
+    if (!imageUpload || imageUpload.length === 0) {
+      alert("Välj fil");
+      return;
+    }
+    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+    uploadBytes(imageRef, imageUpload).then(() => {
+      alert("Produkten är uppladdad");
+    });
+  };
+
+  const handleImage = (event: React.ChangeEvent<any>) => {
+    setImageUpload(
+      !event.target.files[0] ? alert("Välj fil") : event.target.files[0]
+    );
+  };
 
   //Känner av att något händer i input-fältet
   const handleChange = (
@@ -36,6 +48,7 @@ const CustomerForm = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
     createProduct(formData);
+    uploadImage();
   };
   return (
     <div className="container-form">
@@ -83,8 +96,11 @@ const CustomerForm = () => {
             type="file"
             id="image"
             name="image"
-            value={formData.image}
-            onChange={handleChange}
+            // value={formData.image}
+            onChange={handleImage}
+            // onChange={(event) => {
+            //   setImageUpload(event.target.files[0]);
+            // }}
           />
         </div>
         <div className="form-box">
