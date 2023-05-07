@@ -103,7 +103,7 @@ const CustomerForm = () => {
           />
         </div>
         <div className="form-box">
-          <button type="submit">Lägg till produkt</button>
+          <button type="submit" className="submitButton">Lägg till produkt</button>
         </div>
       </form>
     </div>

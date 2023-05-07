@@ -64,7 +64,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="form-box">
-          <button type="submit">Skicka </button>
+          <button type="submit" className="submitButton">Skicka </button>
         </div>
       </form>
     </div>
