@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { IAllProducts } from "../../interfaces";
 import { createProduct } from "../../Api";
-//Interface for formdata
-// interface IFormData {
-//   title: string;
-//   category: string;
-//   img: string;
-// }
+import { storage } from "../../firebase.config";
+import { ref } from "firebase/storage";
+
 const CustomerForm = () => {
   const [formData, setFormData] = useState<IAllProducts>({
     //Satt mina use-state variablar till tomma som original
@@ -19,6 +16,14 @@ const CustomerForm = () => {
     price: 99,
     title: "",
   });
+
+  const [imageUpload, setImageUpload] = useState(null);
+
+  // const uploadImage = () => {
+  //   if (imageUpload == null) return;
+  //   const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+  // };
+
   //Känner av att något händer i input-fältet
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>

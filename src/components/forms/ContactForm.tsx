@@ -11,7 +11,9 @@ const ContactForm = () => {
     textfield: "",
   });
   //Känner av att något händer i input-fältet
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement |HTMLTextAreaElement>) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name } = event.target;
     setFormData({ ...formData, [name]: event.target.value });
   };
@@ -52,7 +54,7 @@ const ContactForm = () => {
           <label htmlFor="text">Meddelande:</label>
         </div>
         <div className="form-box">
-        <textarea
+          <textarea
             id="textfield"
             name="textfield"
             maxLength={500}
