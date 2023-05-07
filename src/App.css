@@ -83,3 +83,117 @@ textarea {
   .logga {
   }
 }
+
+
+
+
+.container {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.col-md-3 {
+  white-space: 10px;
+}
+
+.carousel-item img {
+  max-width: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+
+
+  background-image: none;
+}
+
+
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: rgb(0, 0, 0);
+  margin-left: -230px;
+}
+
+.heart-icon {
+  position: absolute;
+  bottom: 60px;
+  right: 40px;
+  margin: 8px;
+  font-size: 30px;
+  pointer-events: auto;
+  color: white; /* set the color of the heart to white */
+}
+
+
+.stronger{
+  font-size: 22px;
+}
+
+
+.carousel-indicators li {
+  background-color: rgba(100, 99, 99, 0.5); /* set the background color of the indicators to semi-transparent white */
+  margin-bottom: -70px;
+}
+
+.carousel-indicators .active {
+  background-color: #0a0a0a; /* set the background color of the active indicator to white */
+}
+
+/* .title {
+  background-color: rgb(235, 237, 237);
+} */
+
+.heart-icon:hover {
+  color: red;
+
+}
+.heart-icon2{
+  position: absolute;
+  bottom: 100px;
+  right: 70px;
+  margin: 8px;
+  color: aliceblue;
+  font-size: 30px;
+  pointer-events: auto;
+}
+.cursor-container {
+  pointer-events: none;
+}
+
+.carousel-control-next-icon {
+  position: relative;
+}
+
+.carousel-control-next-icon:after {
+  content: '>';
+  font-size: 55px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  z-index: 1;
+}
+
+.carousel-control-next {
+  width: 55px; 
+  height: 55px; 
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  z-index: 2;
+}
+
+.carousel-item .px-2 img:hover {
+  cursor: pointer;
+}
+
