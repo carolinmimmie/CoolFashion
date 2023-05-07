@@ -69,6 +69,16 @@ textarea {
   border-radius: 1;
 }
 
+
+.categoriescard:hover{
+  opacity: .5;
+  cursor: pointer;
+}
+.allProductsImg:hover{
+  opacity: .5;
+  cursor: pointer;
+}
+
 @media (max-width: 900px) {
   .logga {
   }

@@ -30,6 +30,7 @@ const ProductPage = () => {
       {allProducts.map((x) => (
         <Box sx={{ maxWidth: 150, mb: 1, mt: 1, ml: 10, border: 1 }}>
           <img
+            className="allProductsImg"
             src="https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png"
             alt=""
             width={150}

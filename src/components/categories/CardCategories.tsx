@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 const CardCategories = () => {
   return (
-    <div>
+    <div className='test'>
     <Card sx={{ maxWidth: 150, mb: 1, mt: 1}}>
     <CardMedia
       sx={{ height: 200 }}
@@ -20,7 +20,7 @@ const CardCategories = () => {
     />
     <CardContent sx={{height: 20, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <Typography gutterBottom component="div" sx={{fontsize: "20px" }}>
-        Dam/herr
+        Dam/Herr
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{mt: -1 }}>
         Kategori
