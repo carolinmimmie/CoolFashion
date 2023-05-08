@@ -7,14 +7,20 @@ import {
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import CardCategories from "../categories/CardCategories";
-import { getPopularCatergories } from "../../Api";
-import { ICardCategories } from "../../interfaces";
+import { getAllProducts, getPopularCategories } from "../../Api";
+import { IAllProducts } from "../../interfaces";
+import { Category } from "@material-ui/icons";
 
 const Carousel = () => {
-  const [categoryList, setCategoryList] = useState<ICardCategories[]>([]);
+  const [productList, setProductList] = useState<IAllProducts[]>([]);
 
   useEffect(() => {
-    setCategoryList(getPopularCatergories());
+    const fetchCategories = async () => {
+      const products = await getPopularCategories();
+      setProductList(products);
+      console.log(products);
+    };
+    fetchCategories();
   }, []);
   // const  = getPopularCatergories.map((x) => (
   //   <CardCategories x={x} ></CardCategories>
@@ -40,7 +46,10 @@ const Carousel = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <div className="row">
-              <CardCategories></CardCategories>
+              {productList.map((x) => (
+                <CardCategories category={x.category} key={x.category} />
+              ))}
+              {/* <CardCategories></CardCategories> */}
               {/* <div className="col-md-3">
                 <div className="px-2">
                   <img

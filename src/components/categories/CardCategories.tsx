@@ -5,12 +5,13 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { ICardCategories } from "../../interfaces";
+// import { ICardCategories } from "../../interfaces";
 
 interface IProps {
-  categoryList: ICardCategories;
+  // categoryList: ICardCategories;
+  category: string;
 }
-const CardCategories = ({categoryList}:IProps) => {
+const CardCategories = ({ category }: IProps) => {
   return (
     <div className="test">
       <Card sx={{ width: 0, mb: 1, mt: 1 }}>
@@ -32,10 +33,10 @@ const CardCategories = ({categoryList}:IProps) => {
           }}
         >
           <Typography gutterBottom component="div" sx={{ fontsize: "20px" }}>
-            Dam/Herr
+            {category}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: -1 }}>
-           kategori
+            kategori
           </Typography>
         </CardContent>
       </Card>

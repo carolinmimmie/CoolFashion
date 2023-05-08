@@ -14,6 +14,7 @@ const ProductPage = () => {
     const fetchAllProducts = async () => {
       const products = await getAllProducts();
       setAllProducts(products);
+      // console.log(products);
     };
 
     const fetchContactInformation = async () => {

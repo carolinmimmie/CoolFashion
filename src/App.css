@@ -36,9 +36,15 @@ body {
 }
 
 /* forms */
+
+.form-component-container {
+  display: flex;
+  flex-direction: row;
+}
 .container-form {
   background-color: rgb(223, 223, 220);
   width: 500px;
+  height: 400px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -69,10 +75,9 @@ textarea {
   border-radius: 1;
 }
 
-.submitButton:hover{
+.submitButton:hover {
   color: white;
   background-color: black;
-  
 }
 
 .categoriescard:hover {

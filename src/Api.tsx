@@ -23,8 +23,8 @@ export const getAllProducts = async () => {
   }));
 };
 
-export const getPopularCatergories = async () => {
-  const q = query(AllProductsCollectionRef, where("category", "==", "t-shirt" && "hoodie" && "jeans"));
+export const getPopularCategories = async () => {
+  const q = query(AllProductsCollectionRef, where("category", "==", "hoodie"));
 
   const data = await getDocs(q);
   return data.docs.map((doc) => ({
@@ -33,7 +33,6 @@ export const getPopularCatergories = async () => {
     id: doc.id,
   }));
 };
-
 
 const ContactInformationCollectionRef = collection(db, "Contact Information");
 
