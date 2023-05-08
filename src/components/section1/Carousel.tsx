@@ -21,10 +21,7 @@ const Carousel = () => {
     };
     fetchCategories();
   }, []);
-  console.log(productList);
-  // const  = getPopularCatergories.map((x) => (
-  //   <CardCategories x={x} ></CardCategories>
-  // ));
+  
   return (
     <div className="container">
       <h3>Populära Kategorier</h3>
@@ -35,39 +32,56 @@ const Carousel = () => {
         data-ride="carousel"
       >
         <ol className="carousel-indicators">
-          <li
-            data-target="#myCarousel"
-            data-slide-to="0"
-            className="active"
-          ></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
+          {productList.reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
+            if (i % 4 === 0) {
+              acc.push([]);
+            }
+            acc[acc.length - 1].push(curr);
+            return acc;
+          }, []).map((row: IAllProducts[], i: number) => (
+            <li
+              key={i}
+              data-target="#myCarousel"
+              data-slide-to={i}
+              className={i === 0 ? "active" : ""}
+            ></li>
+          ))}
         </ol>
         <div className="carousel-inner">
-          <div className="carousel-item active">
-            <div className="row">
-              {productList.map((x) => (
-                <div className="col-md-3">
-                  <div className="px-2">
-                    <img
-                      // src="https://picsum.photos/200/301"
-                      src={x.image}
-                      alt="Slide 1"
-                      width="700"
-                      height="320"
-                    />
-                    <div className="title" style={{ fontSize: "19px" }}>
-                      {x.category}
-                    </div>
-                    <div>{x.price} kr</div>
-                    <div className="heart-icon">
-                      <FontAwesomeIcon icon={faHeart} />
+          {productList.reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
+            if (i % 4 === 0) {
+              acc.push([]);
+            }
+            acc[acc.length - 1].push(curr);
+            return acc;
+          }, []).map((row: IAllProducts[], i: number) => (
+            <div
+              key={i}
+              className={`carousel-item ${i === 0 ? 'active' : ''}`}
+            >
+              <div className="row">
+                {row.map((x: IAllProducts) => (
+                  <div key={x.id} className="col-md-3">
+                    <div className="px-2">
+                      <img
+                        src={x.image}
+                        alt={x.category}
+                        width="700"
+                        height="320"
+                      />
+                      <div className="title" style={{ fontSize: "19px" }}>
+                      {x.category.charAt(0).toUpperCase() + x.category.slice(1)} 
+                      </div>
+                      <div>{x.price} kr</div>
+                      <div className="heart-icon">
+                        <FontAwesomeIcon icon={faHeart} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
         <a
