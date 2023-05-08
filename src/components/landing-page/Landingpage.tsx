@@ -14,6 +14,7 @@ const Landingpage = () => {
     <div>
       <Herolandingpage></Herolandingpage>
       <Section1></Section1>
+      <CardCategories category="asdasdasdawsd"></CardCategories>
       <Section2></Section2>
       <Forms></Forms>
       <CardProducts></CardProducts>
