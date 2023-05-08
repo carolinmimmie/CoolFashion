@@ -16,4 +16,8 @@ interface IContactInformation {
   textfield: string;
 }
 
-export type { IAllProducts, IContactInformation };
+interface ICardCategories {
+  categoryList: IAllProducts[];
+}
+
+export type { IAllProducts, IContactInformation, ICardCategories};

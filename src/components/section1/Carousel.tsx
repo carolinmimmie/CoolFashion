@@ -1,13 +1,24 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   faEnvelope,
   faHeart,
   faMapMarkerAlt,
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import CardCategories from "../categories/CardCategories";
+import { getPopularCatergories } from "../../Api";
+import { ICardCategories } from "../../interfaces";
 
 const Carousel = () => {
+  const [categoryList, setCategoryList] = useState<ICardCategories[]>([]);
+
+  useEffect(() => {
+    setCategoryList(getPopularCatergories());
+  }, []);
+  // const  = getPopularCatergories.map((x) => (
+  //   <CardCategories x={x} ></CardCategories>
+  // ));
   return (
     <div className="container">
       <h3>Populära Kategorier</h3>
@@ -29,7 +40,8 @@ const Carousel = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <div className="row">
-              <div className="col-md-3">
+              <CardCategories></CardCategories>
+              {/* <div className="col-md-3">
                 <div className="px-2">
                   <img
                     src="https://picsum.photos/200/300"
@@ -46,7 +58,7 @@ const Carousel = () => {
                     <FontAwesomeIcon icon={faHeart} />
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="col-md-3">
                 <div className="px-2">
                   <img

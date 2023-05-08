@@ -23,6 +23,18 @@ export const getAllProducts = async () => {
   }));
 };
 
+export const getPopularCatergories = async () => {
+  const q = query(AllProductsCollectionRef, where("category", "==", "t-shirt" && "hoodie" && "jeans"));
+
+  const data = await getDocs(q);
+  return data.docs.map((doc) => ({
+    ...(doc.data() as IAllProducts),
+
+    id: doc.id,
+  }));
+};
+
+
 const ContactInformationCollectionRef = collection(db, "Contact Information");
 
 export const getContactInformation = async () => {
