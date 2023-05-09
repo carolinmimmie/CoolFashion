@@ -10,6 +10,8 @@ import CardCategories from "../categories/CardCategories";
 import { getAllProducts, getPopularCategories } from "../../Api";
 import { IAllProducts } from "../../interfaces";
 import { Category } from "@material-ui/icons";
+import {Link} from "react-router-dom";
+
 
 const Carousel = () => {
   const [productList, setProductList] = useState<IAllProducts[]>([]);
@@ -63,15 +65,16 @@ const Carousel = () => {
                 {row.map((x: IAllProducts) => (
                   <div key={x.id} className="col-md-3">
                     <div className="px-2">
+                    <Link to="product" > 
                       <img
                         src={x.image}
                         alt={x.category}
                         width="700"
                         height="320"
-                      />
-                      <div className="title" style={{ fontSize: "19px" }}>
+                      /> </Link>
+                        <Link to="product" >  <div className="title" style={{ fontSize: "19px" }}>
                       {x.category.charAt(0).toUpperCase() + x.category.slice(1)} 
-                      </div>
+                      </div> </Link>
                       <div>{x.price} kr</div>
                       <div className="heart-icon">
                         <FontAwesomeIcon icon={faHeart} />
