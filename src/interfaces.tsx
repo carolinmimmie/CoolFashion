@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 interface IAllProducts {
   id: string;
   category: string;
@@ -7,6 +9,7 @@ interface IAllProducts {
   news: boolean;
   price: number;
   title: string;
+  date: Timestamp;
 }
 
 interface IContactInformation {

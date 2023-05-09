@@ -32,6 +32,7 @@ const NewsCarousel = () => {
       >
         <ol className="carousel-indicators">
           {productList
+          .sort((a, b) => new Date(a.date.toDate()).getTime() - new Date(b.date.toDate()).getTime())
             .reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
               if (i % 4 === 0) {
                 acc.push([]);

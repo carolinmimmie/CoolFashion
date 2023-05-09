@@ -48,12 +48,13 @@ export const getContactInformation = async () => {
 export const createProduct = async (product: IAllProducts) => {
   await addDoc(AllProductsCollectionRef, {
     category: product.category,
-    image: product.image,
+    image: "https://picsum.photos/200/302",
     gender: product.gender,
     liked: product.liked,
     news: product.news,
     price: product.price,
     title: product.title,
+    datum: Timestamp.fromDate(new Date())
   });
 };
 

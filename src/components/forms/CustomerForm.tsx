@@ -4,6 +4,7 @@ import { createProduct } from "../../Api";
 import { storage } from "../../firebase.config";
 import { ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
+import { Timestamp } from "firebase/firestore";
 
 const CustomerForm = () => {
   const [formData, setFormData] = useState<IAllProducts>({
@@ -16,6 +17,7 @@ const CustomerForm = () => {
     news: true,
     price: 99,
     title: "",
+    date: Timestamp.now(),
   });
 
   const [imageUpload, setImageUpload] = useState<any>(null);
