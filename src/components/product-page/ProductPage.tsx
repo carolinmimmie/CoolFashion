@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IAllProducts, IContactInformation } from "../../interfaces";
 import { getAllProducts, getContactInformation } from "../../Api";
 import { Box, imageListClasses } from "@mui/material";
-import CardProducts from "../produkts/CardProducts";
+import CardProducts from "./CardProducts";
 
 const ProductPage = () => {
   const [allProducts, setAllProducts] = useState<IAllProducts[]>([]);
