@@ -16,7 +16,7 @@ const NewsCarousel = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       const products = await getAllProducts();
-      setProductList(products.reverse());
+      setProductList(products);
     };
     fetchCategories();
   }, []);
@@ -32,7 +32,12 @@ const NewsCarousel = () => {
       >
         <ol className="carousel-indicators">
           {productList
-          .sort((a, b) => new Date(a.date.toDate()).getTime() - new Date(b.date.toDate()).getTime())
+            // .filter(
+            //   (product) => product.date !== null && product.date !== undefined
+            // )
+            .sort(
+              (a, b) => b.date.toDate().getTime() - a.date.toDate().getTime()
+            )
             .reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
               if (i % 4 === 0) {
                 acc.push([]);

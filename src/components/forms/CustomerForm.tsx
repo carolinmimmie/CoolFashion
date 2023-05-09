@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IAllProducts } from "../../interfaces";
 import { createProduct } from "../../Api";
 import { storage } from "../../firebase.config";
@@ -19,6 +19,10 @@ const CustomerForm = () => {
     title: "",
     date: Timestamp.now(),
   });
+
+  // useEffect(() => {
+  //   formData.date = Timestamp.now();
+  // }, []);
 
   const [imageUpload, setImageUpload] = useState<any>(null);
 
@@ -49,6 +53,9 @@ const CustomerForm = () => {
   //Knappen i form
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
+    // formData.date = Timestamp.now();
+    // formData.date = Timestamp.now();
+    // formData.date ? createProduct(formData) : alert("ojdå");
     createProduct(formData);
     uploadImage();
   };
@@ -105,7 +112,9 @@ const CustomerForm = () => {
           />
         </div>
         <div className="form-box">
-          <button type="submit" className="submitButton">Lägg till produkt</button>
+          <button type="submit" className="submitButton">
+            Lägg till produkt
+          </button>
         </div>
       </form>
     </div>

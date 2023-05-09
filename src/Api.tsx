@@ -14,8 +14,10 @@ import { IAllProducts, IContactInformation } from "./interfaces";
 
 const AllProductsCollectionRef = collection(db, "All Products");
 
+const testCollectionRef = collection(db, "test");
+
 export const getAllProducts = async () => {
-  const data = await getDocs(AllProductsCollectionRef);
+  const data = await getDocs(testCollectionRef);
   return data.docs.map((doc) => ({
     ...(doc.data() as IAllProducts),
 
@@ -46,7 +48,7 @@ export const getContactInformation = async () => {
 };
 
 export const createProduct = async (product: IAllProducts) => {
-  await addDoc(AllProductsCollectionRef, {
+  await addDoc(testCollectionRef, {
     category: product.category,
     image: "https://picsum.photos/200/302",
     gender: product.gender,
@@ -54,7 +56,8 @@ export const createProduct = async (product: IAllProducts) => {
     news: product.news,
     price: product.price,
     title: product.title,
-    datum: Timestamp.fromDate(new Date())
+    // datum: Timestamp.fromDate(new Date()),
+    date: Timestamp.now(),
   });
 };
 

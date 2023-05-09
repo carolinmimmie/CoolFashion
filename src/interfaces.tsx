@@ -9,6 +9,7 @@ interface IAllProducts {
   news: boolean;
   price: number;
   title: string;
+  // date: Timestamp | Date;
   date: Timestamp;
 }
 
@@ -23,4 +24,4 @@ interface IContactInformation {
 //   categoryList: IAllProducts[];
 // }
 
-export type { IAllProducts, IContactInformation};
+export type { IAllProducts, IContactInformation };
