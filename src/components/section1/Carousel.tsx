@@ -10,8 +10,7 @@ import CardCategories from "../categories/CardCategories";
 import { getAllProducts, getPopularCategories } from "../../Api";
 import { IAllProducts } from "../../interfaces";
 import { Category } from "@material-ui/icons";
-import {Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 const Carousel = () => {
   const [productList, setProductList] = useState<IAllProducts[]>([]);
@@ -23,7 +22,7 @@ const Carousel = () => {
     };
     fetchCategories();
   }, []);
-  
+
   return (
     <div className="container">
       <h3>Populära Kategorier</h3>
@@ -34,57 +33,69 @@ const Carousel = () => {
         data-ride="carousel"
       >
         <ol className="carousel-indicators">
-          {productList.reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
-            if (i % 4 === 0) {
-              acc.push([]);
-            }
-            acc[acc.length - 1].push(curr);
-            return acc;
-          }, []).map((row: IAllProducts[], i: number) => (
-            <li
-              key={i}
-              data-target="#myCarousel"
-              data-slide-to={i}
-              className={i === 0 ? "active" : ""}
-            ></li>
-          ))}
+          {productList
+            .reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
+              if (i % 4 === 0) {
+                acc.push([]);
+              }
+              acc[acc.length - 1].push(curr);
+              return acc;
+            }, [])
+            .map((row: IAllProducts[], i: number) => (
+              <li
+                key={i}
+                data-target="#myCarousel"
+                data-slide-to={i}
+                className={i === 0 ? "active" : ""}
+              ></li>
+            ))}
         </ol>
         <div className="carousel-inner">
-          {productList.reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
-            if (i % 4 === 0) {
-              acc.push([]);
-            }
-            acc[acc.length - 1].push(curr);
-            return acc;
-          }, []).map((row: IAllProducts[], i: number) => (
-            <div
-              key={i}
-              className={`carousel-item ${i === 0 ? 'active' : ''}`}
-            >
-              <div className="row">
-                {row.map((x: IAllProducts) => (
-                  <div key={x.id} className="col-md-3">
-                    <div className="px-2">
-                    <Link to="categories" > 
-                      <img
-                        src={x.image}
-                        alt={x.category}
-                        width="700"
-                        height="320"
-                      /> </Link>
-                        <Link to="categories" >  <div className="title" style={{ fontSize: "19px" }}>
-                      {x.category.charAt(0).toUpperCase() + x.category.slice(1)} 
-                      </div> </Link>
-                      <div>{x.price} kr</div>
-                      <div className="heart-icon">
-                        <FontAwesomeIcon icon={faHeart} />
+          {productList
+            .reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
+              if (i % 4 === 0) {
+                acc.push([]);
+              }
+              acc[acc.length - 1].push(curr);
+              return acc;
+            }, [])
+            .map((row: IAllProducts[], i: number) => (
+              <div
+                key={i}
+                className={`carousel-item ${i === 0 ? "active" : ""}`}
+              >
+                <div className="row">
+                  {row.map((x: IAllProducts) => (
+                    <div key={x.id} className="col-md-3">
+                      <div className="px-2">
+                        <Link to="categories" style={{ color: "black" }}>
+                          <img
+                            src={x.image}
+                            alt={x.category}
+                            width="700"
+                            height="320"
+                          />{" "}
+                        </Link>
+                        <Link to="categories">
+                          {" "}
+                          <div
+                            className="title"
+                            style={{ fontSize: "19px", color: "black" }}
+                          >
+                            {x.category.charAt(0).toUpperCase() +
+                              x.category.slice(1)}
+                          </div>{" "}
+                        </Link>
+                        <div>{x.price} kr</div>
+                        <div className="heart-icon">
+                          <FontAwesomeIcon icon={faHeart} />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         <a
