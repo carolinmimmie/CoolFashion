@@ -69,7 +69,7 @@ const NewsCarousel = () => {
                         <Link to="categories">
                           <img
                             src={x.image}
-                            alt={x.category}
+                            alt="{x.image}"
                             width="700"
                             height="320"
                           />{" "}
@@ -80,8 +80,7 @@ const NewsCarousel = () => {
                             className="title"
                             style={{ fontSize: "19px", color: "black" }}
                           >
-                            {x.category.charAt(0).toUpperCase() +
-                              x.category.slice(1)}
+                            {x.title.charAt(0).toUpperCase() + x.title.slice(1)}
                           </div>{" "}
                         </Link>
                         <div>{x.price} kr</div>
