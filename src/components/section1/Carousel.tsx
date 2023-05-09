@@ -65,14 +65,14 @@ const Carousel = () => {
                 {row.map((x: IAllProducts) => (
                   <div key={x.id} className="col-md-3">
                     <div className="px-2">
-                    <Link to="product" > 
+                    <Link to="categories" > 
                       <img
                         src={x.image}
                         alt={x.category}
                         width="700"
                         height="320"
                       /> </Link>
-                        <Link to="product" >  <div className="title" style={{ fontSize: "19px" }}>
+                        <Link to="categories" >  <div className="title" style={{ fontSize: "19px" }}>
                       {x.category.charAt(0).toUpperCase() + x.category.slice(1)} 
                       </div> </Link>
                       <div>{x.price} kr</div>
