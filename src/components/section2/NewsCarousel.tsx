@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -6,6 +7,8 @@ import {
   faMapMarkerAlt,
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
+
+
 
 const NewsCarousel = () => {
   return (
@@ -32,12 +35,13 @@ const NewsCarousel = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="px-2">
-                  <img
+                  <Link to="product" ><img
                     src="https://picsum.photos/400/600"
                     alt="Slide 1"
                     width="1400"
                     height="500"
-                  />
+
+                  /></Link>
                   <div className="title" style={{ fontSize: "24px" }}>
                     Big Title 1
                   </div>
@@ -49,12 +53,12 @@ const NewsCarousel = () => {
               </div>
               <div className="col-md-6">
                 <div className="px-2">
-                  <img
+                <Link to="product" > <img
                     src="https://picsum.photos/400/601"
                     alt="Slide 2"
                     width="1400"
                     height="500"
-                  />
+                  /></Link>
                   <div className="title" style={{ fontSize: "24px" }}>
                     Big Title 2
                   </div>
@@ -70,12 +74,12 @@ const NewsCarousel = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="px-2">
-                  <img
+                <Link to="product" >  <img
                     src="https://picsum.photos/400/602"
                     alt="Slide 3"
                     width="1400"
                     height="500"
-                  />
+                  /></Link>
                   <div className="title" style={{ fontSize: "24px" }}>
                     Big Title 3
                   </div>
@@ -87,12 +91,13 @@ const NewsCarousel = () => {
               </div>
               <div className="col-md-6">
                 <div className="px-2">
+                <Link to="product" > 
                   <img
                     src="https://picsum.photos/400/603"
                     alt="Slide 4"
                     width="1400"
                     height="500"
-                  />
+                  /> </Link>
                   <div className="title" style={{ fontSize: "24px" }}>
                     Big Title 4
                   </div>
@@ -108,12 +113,13 @@ const NewsCarousel = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="px-2">
+                <Link to="product" > 
                   <img
                     src="https://picsum.photos/400/604"
                     alt="Slide 5"
                     width="1400"
                     height="500"
-                  />
+                  /></Link>
                   <div className="title" style={{ fontSize: "24px" }}>
                     Big Title 5
                   </div>
@@ -125,12 +131,13 @@ const NewsCarousel = () => {
               </div>
               <div className="col-md-6">
                 <div className="px-2">
+                <Link to="product" > 
                   <img
                     src="https://picsum.photos/400/605"
                     alt="Slide 6"
                     width="1400"
                     height="500"
-                  />
+                  /></Link>
                   <div className="title" style={{ fontSize: "24px" }}>
                     Big Title 6
                   </div>
@@ -146,12 +153,13 @@ const NewsCarousel = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="px-2">
+                <Link to="product" > 
                   <img
                     src="https://picsum.photos/400/606"
                     alt="Slide 7"
                     width="1400"
                     height="500"
-                  />
+                  /> </Link>
                   <div className="title" style={{ fontSize: "24px" }}>
                     Big Title 7
                   </div>

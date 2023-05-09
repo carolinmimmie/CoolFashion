@@ -5,11 +5,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Box } from '@mui/material';
 
 
 const CardProducts = () => {
   return (
-    <div>
+    <Box className='product' sx={{mt: 15, display: "flex", justifyContent: "center" , }}>
   <Card sx={{ maxWidth: 180, mb: 1, mt: 1}}>
       <CardMedia
         sx={{ height: 230 }}
@@ -29,7 +30,7 @@ const CardProducts = () => {
         </CardContent>
     </Card>
 
-    </div>
+    </Box>
 
   )
 }

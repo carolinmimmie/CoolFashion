@@ -9,6 +9,7 @@ import Section1 from "../section1/Section1";
 import Section2 from "../section2/Section2";
 import Forms from "../forms/Forms";
 
+
 const Landingpage = () => {
   return (
     <div>
@@ -17,7 +18,9 @@ const Landingpage = () => {
       <CardCategories category="asdasdasdawsd"></CardCategories>
       <Section2></Section2>
       <Forms></Forms>
+  
       <CardProducts></CardProducts>
+   
       <ProductPage></ProductPage>
     </div>
   );
