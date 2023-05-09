@@ -14,93 +14,72 @@ const NewsCarousel = () => {
   const [productList, setProductList] = useState<IAllProducts[]>([]);
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const fetchProducts = async () => {
       const products = await getAllProducts();
       setProductList(products);
     };
-    fetchCategories();
+    fetchProducts();
+  }, []);
+
+  const productRows = productList.reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
+    if (i % 2 === 0) {
+      acc.push([]);
+    }
+    acc[acc.length - 1].push(curr);
+    return acc;
   }, []);
 
   return (
     <div className="container mt-5">
       <h3>Nyhetskategorier</h3>
-      <div
-        id="newCarousel"
-        className="carousel slide"
-        data-interval="false"
-        data-ride="carousel"
-      >
+      <div id="newCarousel" className="carousel slide" data-interval="false" data-ride="carousel">
         <ol className="carousel-indicators">
-          {productList
-            // .filter(
-            //   (product) => product.date !== null && product.date !== undefined
-            // )
-            .sort(
-              (a, b) => b.date.toDate().getTime() - a.date.toDate().getTime()
-            )
-            .reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
-              if (i % 4 === 0) {
-                acc.push([]);
-              }
-              acc[acc.length - 1].push(curr);
-              return acc;
-            }, [])
-            .map((row: IAllProducts[], i: number) => (
-              <li
-                key={i}
-                data-target="#myCarousel"
-                data-slide-to={i}
-                className={i === 0 ? "active" : ""}
-              ></li>
-            ))}
+          {productRows.map((row: IAllProducts[], i: number) => (
+            <li
+              key={i}
+              data-target="#newCarousel"
+              data-slide-to={i}
+              className={i === 0 ? "active" : ""}
+            ></li>
+          ))}
         </ol>
         <div className="carousel-inner">
-          {productList
-            .reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
-              if (i % 4 === 0) {
-                acc.push([]);
-              }
-              acc[acc.length - 1].push(curr);
-              return acc;
-            }, [])
-            .map((row: IAllProducts[], i: number) => (
-              <div
-                key={i}
-                className={`carousel-item ${i === 0 ? "active" : ""}`}
-              >
-                <div className="row">
-                  {row.map((x: IAllProducts) => (
-                    <div key={x.id} className="col-md-3">
-                      <div className="px-2">
-                        <Link to="categories">
-                          <img
-                            src={x.image}
-                            alt="{x.image}"
-                            width="700"
-                            height="320"
-                          />{" "}
-                        </Link>
-                        <Link to="categories">
-                          {" "}
-                          <div
-                            className="title"
-                            style={{ fontSize: "19px", color: "black" }}
-                          >
-                            {x.title.charAt(0).toUpperCase() + x.title.slice(1)}
-                          </div>{" "}
-                        </Link>
-                        <div>{x.price} kr</div>
-                        <div className="heart-icon">
-                          <FontAwesomeIcon icon={faHeart} />
+          {productRows.map((row: IAllProducts[], i: number) => (
+            <div
+              key={i}
+              className={`carousel-item ${i === 0 ? "active" : ""}`}
+            >
+              <div className="row">
+                {row.map((x: IAllProducts) => (
+                  <div key={x.id} className="col-md-6">
+                    <div className="px-2">
+                      <Link to="categories">
+                        <img
+                          src={x.image}
+                          alt={x.image}
+                          width="700"
+                          height="320"
+                        />
+                      </Link>
+                      <Link to="categories">
+                        <div
+                          className="title"
+                          style={{ fontSize: "19px", color: "black" }}
+                        >
+                          {x.title.charAt(0).toUpperCase() + x.title.slice(1)}
                         </div>
+                      </Link>
+                      <div>{x.price} kr</div>
+                      <div className="heart-icon">
+                        <FontAwesomeIcon icon={faHeart} />
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          ))}
         </div>
-
         <a
           className="carousel-control-prev"
           href="#newCarousel"
