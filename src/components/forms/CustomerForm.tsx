@@ -20,48 +20,21 @@ const CustomerForm = () => {
     date: Timestamp.now(),
   });
 
-  // let formData = {
-  //   id: "",
-  //   category: "",
-  //   image: "",
-  //   gender: "",
-  //   liked: false,
-  //   news: true,
-  //   price: 99,
-  //   title: "",
-  //   date: Timestamp.now(),
-  // };
-
   const [imageUpload, setImageUpload] = useState<any>(null);
-  // const [imageList, setImageList] = useState<any>([]);
 
-  const imageListRef = ref(storage, "images/");
-
-  const uploadImage = () => {
+  const uploadImage = async () => {
     if (!imageUpload || imageUpload.length === 0) {
       alert("Välj fil");
       return;
     }
     const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-    uploadBytes(imageRef, imageUpload).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        // setImageList((prev: any) => [...prev, url]);
-        formData.image = url;
-      });
-      console.log(formData);
-      alert("Produkten är uppladdad");
-    });
+    const snapshot = await uploadBytes(imageRef, imageUpload);
+    const url = await getDownloadURL(snapshot.ref);
+    formData.image = url;
+    console.log(formData);
+    alert("Produkten är uppladdad");
+    createProduct(formData);
   };
-
-  // useEffect(() => {
-  //   listAll(imageListRef).then((response) => {
-  //     response.items.forEach((item) => {
-  //       getDownloadURL(item).then((url) => {
-  //         setImageList((prev: any) => [...prev, url]);
-  //       });
-  //     });
-  //   });
-  // }, []);
 
   const handleImage = (event: React.ChangeEvent<any>) => {
     setImageUpload(
@@ -79,20 +52,8 @@ const CustomerForm = () => {
   //Knappen i form
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
-    // formData.date = Timestamp.now();
-    // formData.date = Timestamp.now();
-    // formData.date ? createProduct(formData) : alert("ojdå");
-    // formData.image = imageList[0];
-    // formData.image = imageList[0];
     uploadImage();
-
-    // formData.image = imageList.pop();
-    // formData.image = url;
-
-    // console.log(formData.image);
     console.log(formData);
-    createProduct(formData);
-    // getAllProducts();
   };
   return (
     <div className="container-form">
@@ -136,15 +97,7 @@ const CustomerForm = () => {
           <label htmlFor="image">Produktbild:</label>
         </div>
         <div className="form-box">
-          <input
-            type="file"
-            id="image"
-            name="image"
-            // value={formData.image}
-            // Om den här inte är utkommenterad så syns det inte
-            // vilken fil man har valt i formuläret på sidan?
-            onChange={handleImage}
-          />
+          <input type="file" id="image" name="image" onChange={handleImage} />
         </div>
         <div className="form-box">
           <button type="submit" className="submitButton">
