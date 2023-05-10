@@ -50,7 +50,8 @@ export const getContactInformation = async () => {
 export const createProduct = async (product: IAllProducts) => {
   await addDoc(testCollectionRef, {
     category: product.category,
-    image: "https://picsum.photos/200/302",
+    // image: "https://picsum.photos/200/302",
+    image: product.image,
     gender: product.gender,
     liked: product.liked,
     news: product.news,

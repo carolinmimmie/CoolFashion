@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IAllProducts } from "../../interfaces";
 import { createProduct, getAllProducts } from "../../Api";
 import { storage } from "../../firebase.config";
-import { ref, uploadBytes } from "firebase/storage";
+import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { Timestamp } from "firebase/firestore";
 
@@ -20,11 +20,10 @@ const CustomerForm = () => {
     date: Timestamp.now(),
   });
 
-  // useEffect(() => {
-  //   formData.date = Timestamp.now();
-  // }, []);
-
   const [imageUpload, setImageUpload] = useState<any>(null);
+  const [imageList, setImageList] = useState<any>([]);
+
+  const imageListRef = ref(storage, "images/");
 
   const uploadImage = () => {
     if (!imageUpload || imageUpload.length === 0) {
@@ -36,6 +35,16 @@ const CustomerForm = () => {
       alert("Produkten är uppladdad");
     });
   };
+
+  useEffect(() => {
+    listAll(imageListRef).then((response) => {
+      response.items.forEach((item) => {
+        getDownloadURL(item).then((url) => {
+          setImageList((prev: any) => [...prev, url]);
+        });
+      });
+    });
+  }, []);
 
   const handleImage = (event: React.ChangeEvent<any>) => {
     setImageUpload(
@@ -56,8 +65,15 @@ const CustomerForm = () => {
     // formData.date = Timestamp.now();
     // formData.date = Timestamp.now();
     // formData.date ? createProduct(formData) : alert("ojdå");
-    createProduct(formData);
+    // formData.image = imageList[0];
+    // formData.image = imageList[0];
     uploadImage();
+    formData.image = imageList.pop();
+    // console.log(imageList.pop);
+    // console.log(imageList[0]);
+
+    console.log(formData.image);
+    createProduct(formData);
     // getAllProducts();
   };
   return (
