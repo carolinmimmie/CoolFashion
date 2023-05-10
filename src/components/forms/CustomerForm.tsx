@@ -20,8 +20,20 @@ const CustomerForm = () => {
     date: Timestamp.now(),
   });
 
+  // let formData = {
+  //   id: "",
+  //   category: "",
+  //   image: "",
+  //   gender: "",
+  //   liked: false,
+  //   news: true,
+  //   price: 99,
+  //   title: "",
+  //   date: Timestamp.now(),
+  // };
+
   const [imageUpload, setImageUpload] = useState<any>(null);
-  const [imageList, setImageList] = useState<any>([]);
+  // const [imageList, setImageList] = useState<any>([]);
 
   const imageListRef = ref(storage, "images/");
 
@@ -31,20 +43,25 @@ const CustomerForm = () => {
       return;
     }
     const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-    uploadBytes(imageRef, imageUpload).then(() => {
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        // setImageList((prev: any) => [...prev, url]);
+        formData.image = url;
+      });
+      console.log(formData);
       alert("Produkten är uppladdad");
     });
   };
 
-  useEffect(() => {
-    listAll(imageListRef).then((response) => {
-      response.items.forEach((item) => {
-        getDownloadURL(item).then((url) => {
-          setImageList((prev: any) => [...prev, url]);
-        });
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   listAll(imageListRef).then((response) => {
+  //     response.items.forEach((item) => {
+  //       getDownloadURL(item).then((url) => {
+  //         setImageList((prev: any) => [...prev, url]);
+  //       });
+  //     });
+  //   });
+  // }, []);
 
   const handleImage = (event: React.ChangeEvent<any>) => {
     setImageUpload(
@@ -68,11 +85,12 @@ const CustomerForm = () => {
     // formData.image = imageList[0];
     // formData.image = imageList[0];
     uploadImage();
-    formData.image = imageList.pop();
-    // console.log(imageList.pop);
-    // console.log(imageList[0]);
 
-    console.log(formData.image);
+    // formData.image = imageList.pop();
+    // formData.image = url;
+
+    // console.log(formData.image);
+    console.log(formData);
     createProduct(formData);
     // getAllProducts();
   };
