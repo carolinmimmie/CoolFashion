@@ -50,6 +50,7 @@ const NewsCarousel = () => {
             ></li>
           ))}
         </ol>
+
         <div className="carousel-inner">
           {productRows.map((row: IAllProducts[], i: number) => (
             <div key={i} className={`carousel-item ${i === 0 ? "active" : ""}`}>
@@ -58,12 +59,9 @@ const NewsCarousel = () => {
                   <div key={x.id} className="col-md-6">
                     <div className="px-2">
                       <Link to="categories">
-                        <img
-                          src={x.image}
-                          alt={x.image}
-                          width="700"
-                          height="320"
-                        />
+                        <div className="image-container">
+                          <img src={x.image} alt={x.image} />
+                        </div>
                       </Link>
                       <Link to="categories">
                         <div
@@ -84,6 +82,7 @@ const NewsCarousel = () => {
             </div>
           ))}
         </div>
+
         <a
           className="carousel-control-prev"
           href="#newCarousel"

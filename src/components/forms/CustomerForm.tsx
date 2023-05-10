@@ -53,8 +53,18 @@ const CustomerForm = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
     uploadImage();
+    // window.location.reload();
     console.log(formData);
+    getAllProducts();
   };
+
+  // const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   await uploadImage();
+  //   createProduct(formData);
+  //   window.location.reload(); // Refresh the page
+  // };
+
   return (
     <div className="container-form">
       <h2>Lägg till Produkt</h2>
