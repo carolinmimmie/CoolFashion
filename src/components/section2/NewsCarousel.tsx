@@ -33,7 +33,7 @@ const NewsCarousel = () => {
 
   return (
     <div className="container mt-5">
-      <h3>Nyhetskategorier</h3>
+      <h3>Nyheter</h3>
       <div
         id="newCarousel"
         className="carousel slide"

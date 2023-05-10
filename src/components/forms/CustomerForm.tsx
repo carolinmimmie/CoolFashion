@@ -58,12 +58,6 @@ const CustomerForm = () => {
     getAllProducts();
   };
 
-  // const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  //   await uploadImage();
-  //   createProduct(formData);
-  //   window.location.reload(); // Refresh the page
-  // };
 
   return (
     <div className="container-form">
