@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IAllProducts } from "../../interfaces";
-import { createProduct } from "../../Api";
+import { createProduct, getAllProducts } from "../../Api";
 import { storage } from "../../firebase.config";
 import { ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
@@ -58,6 +58,7 @@ const CustomerForm = () => {
     // formData.date ? createProduct(formData) : alert("ojdå");
     createProduct(formData);
     uploadImage();
+    // getAllProducts();
   };
   return (
     <div className="container-form">

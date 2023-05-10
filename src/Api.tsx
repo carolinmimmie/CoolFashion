@@ -59,6 +59,7 @@ export const createProduct = async (product: IAllProducts) => {
     // datum: Timestamp.fromDate(new Date()),
     date: Timestamp.now(),
   });
+  getAllProducts();
 };
 
 export const createContactInformation = async (info: IContactInformation) => {

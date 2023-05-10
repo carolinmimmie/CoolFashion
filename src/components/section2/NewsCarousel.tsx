@@ -21,18 +21,25 @@ const NewsCarousel = () => {
     fetchProducts();
   }, []);
 
-  const productRows = productList.reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
-    if (i % 2 === 0) {
-      acc.push([]);
-    }
-    acc[acc.length - 1].push(curr);
-    return acc;
-  }, []);
+  const productRows = productList
+    .sort((a, b) => b.date.toDate().getTime() - a.date.toDate().getTime())
+    .reduce((acc: IAllProducts[][], curr: IAllProducts, i: number) => {
+      if (i % 2 === 0) {
+        acc.push([]);
+      }
+      acc[acc.length - 1].push(curr);
+      return acc;
+    }, []);
 
   return (
     <div className="container mt-5">
       <h3>Nyhetskategorier</h3>
-      <div id="newCarousel" className="carousel slide" data-interval="false" data-ride="carousel">
+      <div
+        id="newCarousel"
+        className="carousel slide"
+        data-interval="false"
+        data-ride="carousel"
+      >
         <ol className="carousel-indicators">
           {productRows.map((row: IAllProducts[], i: number) => (
             <li
@@ -45,10 +52,7 @@ const NewsCarousel = () => {
         </ol>
         <div className="carousel-inner">
           {productRows.map((row: IAllProducts[], i: number) => (
-            <div
-              key={i}
-              className={`carousel-item ${i === 0 ? "active" : ""}`}
-            >
+            <div key={i} className={`carousel-item ${i === 0 ? "active" : ""}`}>
               <div className="row">
                 {row.map((x: IAllProducts) => (
                   <div key={x.id} className="col-md-6">
