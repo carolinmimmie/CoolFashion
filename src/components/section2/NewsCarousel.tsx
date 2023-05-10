@@ -11,6 +11,7 @@ import { IAllProducts } from "../../interfaces";
 import { getAllProducts } from "../../Api";
 
 const NewsCarousel = () => {
+
   const [productList, setProductList] = useState<IAllProducts[]>([]);
 
   useEffect(() => {

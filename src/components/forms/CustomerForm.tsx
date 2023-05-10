@@ -1,12 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IAllProducts } from "../../interfaces";
 import { createProduct, getAllProducts } from "../../Api";
 import { storage } from "../../firebase.config";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { Timestamp } from "firebase/firestore";
+import LandingPageContext, {
+
+} from "../../context/LandingPageContext";
 
 const CustomerForm = () => {
+  const { productList, setProductList } =
+    useContext(LandingPageContext);
+  const cProduct = async (product: IAllProducts) => {
+    await createProduct(product);
+    setProductList(await getAllProducts());
+  };
   const [formData, setFormData] = useState<IAllProducts>({
     //Satt mina use-state variablar till tomma som original
     id: "",
@@ -33,7 +42,7 @@ const CustomerForm = () => {
     formData.image = url;
     console.log(formData);
     alert("Produkten är uppladdad");
-    createProduct(formData);
+    cProduct(formData);
   };
 
   const handleImage = (event: React.ChangeEvent<any>) => {
@@ -57,7 +66,6 @@ const CustomerForm = () => {
     console.log(formData);
     getAllProducts();
   };
-
 
   return (
     <div className="container-form">
