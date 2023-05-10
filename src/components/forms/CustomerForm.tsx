@@ -5,13 +5,10 @@ import { storage } from "../../firebase.config";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { Timestamp } from "firebase/firestore";
-import LandingPageContext, {
-
-} from "../../context/LandingPageContext";
+import { LandingPageContext } from "../../context/ContextLandingPage";
 
 const CustomerForm = () => {
-  const { productList, setProductList } =
-    useContext(LandingPageContext);
+  const { productList, setProductList } = useContext(LandingPageContext);
   const cProduct = async (product: IAllProducts) => {
     await createProduct(product);
     setProductList(await getAllProducts());
