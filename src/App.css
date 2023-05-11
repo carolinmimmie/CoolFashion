@@ -8,16 +8,11 @@ body {
 
 .hero {
   height: 700px;
-  background-color: grey;
-  background-image: url(../src/images/img-placeholder.webp);
-
-  background-position: center;
-
-  /* background-repeat: no-repeat; */
-
-  /* background-size: cover; */
-
-  /* position: relative; */
+  background-image: url(../src/images/atikh-bana-_KaMTEmJnxY-unsplash.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .image-container {

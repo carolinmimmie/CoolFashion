@@ -23,7 +23,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import BasicMenu from "./BasicMenu";
-
+// import { Link, useNavigate } from "react-router-dom";
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -32,7 +32,7 @@ interface Props {
   window?: () => Window;
 }
 const drawerWidth = 240;
-const navItems = ["Link", "Link", "Link", "Link", "Link"];
+const navItems = ["Contact", "Admin", "Link", "Link", "Link"];
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -131,6 +131,7 @@ const Nav = (props: Props) => {
               className="Logga"
             >
               COOL FASHION
+              
             </Typography>
 
             <BasicMenu></BasicMenu>
