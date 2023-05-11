@@ -137,8 +137,8 @@ const Nav = (props: Props) => {
             <BasicMenu></BasicMenu>
             <BasicMenu></BasicMenu>
             <BasicMenu></BasicMenu>
-
-            {/* <Box
+{/* 
+            <Box
               sx={{
                 display: { xs: "none", sm: "none", md: "block" },
                 flexGrow: { sm: 1 },
@@ -149,10 +149,10 @@ const Nav = (props: Props) => {
                   {item}
                 </BasicMenu>
               ))}
-            </Box> */}
+            </Box>  */}
 
             <Box className="boxserchandicon" sx={{}}>
-              {/* <Search sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
+            <Search sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
                 <SearchIconWrapper>
                   <SearchIcon />
                 </SearchIconWrapper>
@@ -166,14 +166,14 @@ const Nav = (props: Props) => {
                 <FavoriteBorderIcon sx={{ ml: 2 }} />
                 <PersonOutlineIcon sx={{ ml: 2 }} />
                 <WorkOutlineIcon sx={{ ml: 2 }} />
-              </Box> */}
+              </Box> 
             </Box>
           </Toolbar>
           <Box
             className="serchfieldxsscreen"
             sx={{ display: { xs: "block", sm: "block", md: "none" } }}
           >
-            {/* <Search sx={{}}>
+             <Search sx={{}}>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -182,7 +182,7 @@ const Nav = (props: Props) => {
                 inputProps={{ "aria-label": "search" }}
                 className="serchfield"
               />
-            </Search> */}
+            </Search>
           </Box>
         </AppBar>
         <Box component="nav">
