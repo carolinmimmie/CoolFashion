@@ -9,6 +9,7 @@ import Categories from "./components/categories/Categories";
 import Contact from "./components/contact/Contact";
 import Admin from "./components/admin/Admin";
 import Footer from "./components/footer/Footer";
+import SearchPage from "./components/pages/search-page/SearchPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact></Contact>} />
           <Route path="/admin" element={<Admin></Admin>} />
           <Route path="/categories" element={<Categories></Categories>} />
+          <Route path="/search-page" element={<SearchPage></SearchPage>} />
         </Routes>
       </BrowserRouter>
       <Footer></Footer>

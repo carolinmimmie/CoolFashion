@@ -223,3 +223,16 @@ textarea {
   opacity: 0.5;
   cursor: pointer;
 }
+
+
+
+.container_on_search_page {
+ 
+
+ text-align: center;
+ margin-top: 200px;
+}
+
+.gray-bg {
+  background-color: gray;
+}
