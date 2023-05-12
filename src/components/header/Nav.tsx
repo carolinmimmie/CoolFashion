@@ -122,13 +122,6 @@ const Nav = (props: Props) => {
               <ListItemText primary={`Admin`} />
             </Link>
           </ListItem>
-
-          <Link to={"contact"} className="link-div">
-            Kontakta Oss
-          </Link>
-          <Link to={"admin"} className="link-div">
-            Admin
-          </Link>
         </List>
       </Box>
     </div>
@@ -150,7 +143,7 @@ const Nav = (props: Props) => {
                 sx={{
                   mr: 2,
                   display: { sm: "block", md: "none" },
-                  flexGrow: {},
+                  flexGrow: 0,
                 }}
               >
                 <MenuIcon />
@@ -236,7 +229,7 @@ const Nav = (props: Props) => {
               keepMounted: true, // Better open performance on mobile.
             }}
             sx={{
-              display: { xs: "block", sm: "none" },
+              display: { xs: "block", sm: "block", md: "none" },
               "& .MuiDrawer-paper": {
                 boxSizing: "border-box",
                 width: drawerWidth,
