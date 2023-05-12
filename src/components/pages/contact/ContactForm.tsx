@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { IContactInformation } from "../../interfaces";
-import { createContactInformation } from "../../Api";
+import { IContactInformation } from "../../../interfaces";
+import { createContactInformation } from "../../../Api";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<IContactInformation>({

@@ -6,8 +6,8 @@ import ProductPage from "./components/pages/product-page/ProductPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CardProducts from "./components/pages/product-page/CardProducts";
 import Categories from "./components/categories/Categories";
-import Contact from "./components/contact/Contact";
-import Admin from "./components/admin/Admin";
+import Contact from "./components/pages/contact/Contact";
+import Admin from "./components/pages/admin/Admin";
 import Footer from "./components/footer/Footer";
 import SearchPage from "./components/pages/search-page/SearchPage";
 

@@ -31,7 +31,7 @@ export default function BasicMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        Link
+        BasicLink
       </Button>
       <Menu
         id="basic-menu"
