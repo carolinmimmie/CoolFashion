@@ -36,6 +36,8 @@ body {
 .boxserchandicon {
   display: flex;
   flex-direction: row;
+  /* Sätter space mellan search och links */
+  margin-left: 43rem;
 }
 
 .serchfield {
