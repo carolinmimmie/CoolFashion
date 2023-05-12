@@ -23,6 +23,8 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import BasicMenu from "./BasicMenu";
+import { Link } from "react-router-dom";
+
 // import { Link, useNavigate } from "react-router-dom";
 interface Props {
   /**
@@ -126,19 +128,29 @@ const Nav = (props: Props) => {
               sx={{
                 flexGrow: 0.05,
                 display: { xs: "block", sm: "block" },
-                fontSize: "20px",
+                fontSize: "20px",color:"white",
               }}
-              className="Logga"
             >
-              COOL FASHION
-              
+              {
+                <Link className="logga" to={"/"}>
+                  COOl FASHION
+                </Link>
+              }
             </Typography>
 
-            <BasicMenu></BasicMenu>
-            <BasicMenu></BasicMenu>
-            <BasicMenu></BasicMenu>
-            <BasicMenu></BasicMenu>
-{/* 
+            <Link to={"/"}>
+              <BasicMenu></BasicMenu>
+            </Link>
+            <Link to={"/"}>
+              <BasicMenu></BasicMenu>
+            </Link>
+            <Link to={"contact"}>
+              <BasicMenu></BasicMenu>
+            </Link>
+            <Link to={"admin"}>
+              <BasicMenu></BasicMenu>
+            </Link>
+            {/* 
             <Box
               sx={{
                 display: { xs: "none", sm: "none", md: "block" },
@@ -153,7 +165,7 @@ const Nav = (props: Props) => {
             </Box>  */}
 
             <Box className="boxserchandicon" sx={{}}>
-            <Search sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
+              <Search sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
                 <SearchIconWrapper>
                   <SearchIcon />
                 </SearchIconWrapper>
@@ -167,14 +179,14 @@ const Nav = (props: Props) => {
                 <FavoriteBorderIcon sx={{ ml: 2 }} />
                 <PersonOutlineIcon sx={{ ml: 2 }} />
                 <WorkOutlineIcon sx={{ ml: 2 }} />
-              </Box> 
+              </Box>
             </Box>
           </Toolbar>
           <Box
             className="serchfieldxsscreen"
             sx={{ display: { xs: "block", sm: "block", md: "none" } }}
           >
-             <Search sx={{}}>
+            <Search sx={{}}>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>

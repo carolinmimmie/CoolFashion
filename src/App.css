@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-direction: row;
   /* Sätter space mellan search och links */
-  margin-left: 43rem;
+  /* margin-left: 43rem; */
 }
 
 .serchfield {
@@ -50,6 +50,17 @@ body {
   margin-top: -0.5rem;
 }
 
+.logga {
+  color: white;
+}
+.logga:hover {
+  color: white;
+}
+.sido-rubrik {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
 /* forms */
 
 .form-component-container {
@@ -226,13 +237,9 @@ textarea {
   cursor: pointer;
 }
 
-
-
 .container_on_search_page {
- 
-
- text-align: center;
- margin-top: 200px;
+  text-align: center;
+  margin-top: 200px;
 }
 
 .gray-bg {

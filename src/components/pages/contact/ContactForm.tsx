@@ -24,7 +24,6 @@ const ContactForm = () => {
   };
   return (
     <div className="container-form">
-      <h2>Kontaktformulär</h2>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-box">
           <label htmlFor="username">Namn:</label>
@@ -64,7 +63,9 @@ const ContactForm = () => {
           />
         </div>
         <div className="form-box">
-          <button type="submit" className="submitButton">Skicka </button>
+          <button type="submit" className="submitButton">
+            Skicka{" "}
+          </button>
         </div>
       </form>
     </div>

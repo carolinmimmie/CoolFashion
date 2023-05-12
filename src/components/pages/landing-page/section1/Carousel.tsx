@@ -6,7 +6,7 @@ import {
   faMapMarkerAlt,
   faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import CardCategories from "../../../categories/CardCategories";
+import CardCategories from "../../categories/CardCategories";
 import { getAllProducts, getPopularCategories } from "../../../../Api";
 import { IAllProducts } from "../../../../interfaces";
 import { Category } from "@material-ui/icons";
