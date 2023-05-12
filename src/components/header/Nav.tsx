@@ -88,16 +88,47 @@ const Nav = (props: Props) => {
   const drawer = (
     <div>
       <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-        <Typography variant="h6" sx={{ my: 2 }}>
-          COOL FASHION
-        </Typography>
+        <Link className="hamburger-link-div" to={"/"}>
+          <ListItemText
+            primary={
+              <Typography variant="h6" sx={{ my: 2 }}>
+                COOL FASHION
+              </Typography>
+            }
+          />
+        </Link>
+
         <Divider />
         <List sx={{ ml: 2 }}>
-          {navItems.map((item) => (
+          {/* {navItems.map((item) => (
             <ListItem key={item} disablePadding>
               <ListItemText primary={item} />
             </ListItem>
-          ))}
+          ))} */}
+
+          <ListItem disablePadding>
+            <ListItemText primary={`Produkter`} />
+            <BasicMenu></BasicMenu>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <Link className="hamburger-link-div" to={"contact"}>
+              <ListItemText primary={`Kontakta Oss`} />
+            </Link>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <Link className="hamburger-link-div" to={"admin"}>
+              <ListItemText primary={`Admin`} />
+            </Link>
+          </ListItem>
+
+          <Link to={"contact"} className="link-div">
+            Kontakta Oss
+          </Link>
+          <Link to={"admin"} className="link-div">
+            Admin
+          </Link>
         </List>
       </Box>
     </div>
@@ -122,9 +153,9 @@ const Nav = (props: Props) => {
                   flexGrow: {},
                 }}
               >
-                <MenuIcon sx={{ mt: 0.7 }} />
+                <MenuIcon />
               </IconButton>
-              <div className="nav-container-links-and-h1">
+              <Box className="nav-container-links-and-h1">
                 <Typography
                   variant="h1"
                   component="div"
@@ -152,21 +183,14 @@ const Nav = (props: Props) => {
                 <Link to={"admin"} className="link-div">
                   Admin
                 </Link>
-              </div>
+                {/* <Box
+                  sx={{
+                    display: { xs: "none", sm: "none", md: "block" },
+                    flexGrow: { sm: 1 },
+                  }}
+                ></Box> */}
+              </Box>
             </div>
-            {/* 
-            <Box
-              sx={{
-                display: { xs: "none", sm: "none", md: "block" },
-                flexGrow: { sm: 1 },
-              }}
-            >
-              {navItems.map((item) => (
-                <BasicMenu key={item} sx={{ color: "#fff" }}>
-                  {item}
-                </BasicMenu>
-              ))}
-            </Box>  */}
 
             <Box className="boxserchandicon" sx={{}}>
               <Search sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
@@ -222,7 +246,6 @@ const Nav = (props: Props) => {
             {drawer}
           </Drawer>
         </Box>
-        
       </Box>
     </>
   );
