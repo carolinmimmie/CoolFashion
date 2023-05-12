@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { IAllProducts, IContactInformation } from "../../../interfaces";
 import { getAllProducts, getContactInformation } from "../../../Api";
-import { Box, imageListClasses } from "@mui/material";
-import CardProducts from "./CardProducts";
+import { Box } from "@mui/material";
+
 
 const ProductPage = () => {
   const [allProducts, setAllProducts] = useState<IAllProducts[]>([]);
@@ -40,7 +40,6 @@ const ProductPage = () => {
             {`Här är hämtat från All Products collection: 
           ${x.category}, 
           ${x.gender}, 
-          ${x.news},
           ${x.price},
           ${x.title},`}
           </p>

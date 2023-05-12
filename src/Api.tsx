@@ -14,12 +14,8 @@ import { IAllProducts, IContactInformation } from "./interfaces";
 
 const AllProductsCollectionRef = collection(db, "All Products");
 
-const testCollectionRef = collection(db, "test");
-
-const test2CollectionRef = collection(db, "test2");
-
 export const getAllProducts = async () => {
-  const data = await getDocs(test2CollectionRef);
+  const data = await getDocs(AllProductsCollectionRef);
   return data.docs.map((doc) => ({
     ...(doc.data() as IAllProducts),
 
@@ -50,19 +46,15 @@ export const getContactInformation = async () => {
 };
 
 export const createProduct = async (product: IAllProducts) => {
-  await addDoc(test2CollectionRef, {
+  await addDoc(AllProductsCollectionRef, {
     category: product.category,
-    // image: "https://picsum.photos/200/302",
     image: product.image,
     gender: product.gender,
     liked: product.liked,
-    news: product.news,
     price: product.price,
     title: product.title,
-    // datum: Timestamp.fromDate(new Date()),
     date: Timestamp.now(),
   });
-  // getAllProducts();
 };
 
 export const createContactInformation = async (info: IContactInformation) => {

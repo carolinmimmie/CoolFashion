@@ -6,10 +6,8 @@ interface IAllProducts {
   image: string;
   gender: string;
   liked: boolean;
-  news: boolean;
   price: number;
   title: string;
-  // date: Timestamp | Date;
   date: Timestamp;
 }
 
@@ -19,9 +17,5 @@ interface IContactInformation {
   email: string;
   textfield: string;
 }
-
-// interface ICardCategories {
-//   categoryList: IAllProducts[];
-// }
 
 export type { IAllProducts, IContactInformation };

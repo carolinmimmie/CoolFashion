@@ -19,7 +19,6 @@ const AdminForm = () => {
     image: "",
     gender: "",
     liked: false,
-    news: true,
     price: 99,
     title: "",
     date: Timestamp.now(),
