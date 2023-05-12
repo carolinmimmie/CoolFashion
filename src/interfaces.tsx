@@ -9,6 +9,7 @@ interface IAllProducts {
   price: number;
   title: string;
   date: Timestamp;
+  addedToCart: boolean;
 }
 
 interface IContactInformation {

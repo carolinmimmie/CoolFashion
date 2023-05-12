@@ -53,7 +53,8 @@ export const createProduct = async (product: IAllProducts) => {
     liked: product.liked,
     price: product.price,
     title: product.title,
-    date: Timestamp.now(),
+    date: product.date,
+    addedToCart: product.addedToCart,
   });
 };
 

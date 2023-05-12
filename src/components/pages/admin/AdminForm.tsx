@@ -7,13 +7,8 @@ import { v4 } from "uuid";
 import { Timestamp } from "firebase/firestore";
 
 const AdminForm = () => {
-  // const { productList, setProductList } = useContext(LandingPageContext);
-  // const cProduct = async (product: IAllProducts) => {
-  //   await createProduct(product);
-  //   setProductList(await getAllProducts());
-  // };
+
   const [formData, setFormData] = useState<IAllProducts>({
-    //Satt mina use-state variablar till tomma som original
     id: "",
     category: "",
     image: "",
@@ -22,6 +17,7 @@ const AdminForm = () => {
     price: 99,
     title: "",
     date: Timestamp.now(),
+    addedToCart: false,
   });
 
   const [imageUpload, setImageUpload] = useState<any>(null);
@@ -46,18 +42,15 @@ const AdminForm = () => {
     );
   };
 
-  //Känner av att något händer i input-fältet
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name } = event.target;
     setFormData({ ...formData, [name]: event.target.value });
   };
-  //Knappen i form
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
     uploadImage();
-    // window.location.reload();
     console.log(formData);
     getAllProducts();
   };
