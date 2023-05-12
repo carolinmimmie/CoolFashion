@@ -34,7 +34,7 @@ interface Props {
   window?: () => Window;
 }
 const drawerWidth = 240;
-const navItems = ["Produkter", "Contact", "Admin", "Link", "Link"];
+const navItems = ["Produkter", "Contact", "Admin"];
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -85,70 +85,75 @@ const Nav = (props: Props) => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  // const drawer = (
-  //   <div>
-  //     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-  //       <Typography variant="h6" sx={{ my: 2 }}>
-  //         COOL FASHION
-  //       </Typography>
-  //       <Divider />
-  //       <List sx={{ ml: 2 }}>
-  //         {navItems.map((item) => (
-  //           <ListItem key={item} disablePadding>
-  //             <ListItemText primary={item} />
-  //           </ListItem>
-  //         ))}
-  //       </List>
-  //     </Box>
-  //   </div>
-  // );
+  const drawer = (
+    <div>
+      <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+        <Typography variant="h6" sx={{ my: 2 }}>
+          COOL FASHION
+        </Typography>
+        <Divider />
+        <List sx={{ ml: 2 }}>
+          {navItems.map((item) => (
+            <ListItem key={item} disablePadding>
+              <ListItemText primary={item} />
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+    </div>
+  );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
   return (
     <>
-      <Box sx={{ display: "flex" }}>
+      <Box>
         <AppBar component="nav" sx={{ bgcolor: "black" }}>
-          <Toolbar
-            sx={{ justifyContent: { xs: "space-between", md: "flex-start" } }}
-          >
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "block", md: "none" }, flexGrow: {} }}
-            >
-              <MenuIcon sx={{ mt: 0.7 }} />
-            </IconButton>
+          <Toolbar className="nav-container">
+            <div>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{
+                  mr: 2,
+                  display: { sm: "block", md: "none" },
+                  flexGrow: {},
+                }}
+              >
+                <MenuIcon sx={{ mt: 0.7 }} />
+              </IconButton>
+              <div className="nav-container-links-and-h1">
+                <Typography
+                  variant="h1"
+                  component="div"
+                  sx={{
+                    flexGrow: 0.05,
+                    display: { xs: "block", sm: "block" },
+                    fontSize: "20px",
+                    color: "white",
+                  }}
+                >
+                  {
+                    <Link className="logga" to={"/"}>
+                      COOL FASHION
+                    </Link>
+                  }
+                </Typography>
 
-            <Typography
-              variant="h1"
-              component="div"
-              sx={{
-                flexGrow: 0.05,
-                display: { xs: "block", sm: "block" },
-                fontSize: "20px",
-                color: "white",
-              }}
-            >
-              {
-                <Link className="logga" to={"/"}>
-                  COOl FASHION
+                <Link to={"/"}>
+                  <BasicMenu></BasicMenu>
                 </Link>
-              }
-            </Typography>
 
-            <Link to={"/"}>
-              <BasicMenu></BasicMenu>
-            </Link>
-
-            <Link to={"contact"}>
-              <div className="link-div">Kontakta Oss</div>
-            </Link>
-            <Link to={"admin"}>
-              <div className="link-div">Admin</div>
-            </Link>
+                <Link to={"contact"} className="link-div">
+                  Kontakta Oss
+                </Link>
+                <Link to={"admin"} className="link-div">
+                  Admin
+                </Link>
+              </div>
+            </div>
             {/* 
             <Box
               sx={{
@@ -214,12 +219,10 @@ const Nav = (props: Props) => {
               },
             }}
           >
-            {/* {drawer} */}
+            {drawer}
           </Drawer>
         </Box>
-        {/* <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-      </Box> */}
+        
       </Box>
     </>
   );

@@ -18,8 +18,15 @@ body {
 .nav-container {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-  gap: 3rem;
+  flex-direction: row;
+  /* flex-direction: column; */
+  /* gap: 3rem; */
+}
+
+.nav-container-links-and-h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .link-div {
@@ -30,6 +37,11 @@ body {
   padding-right: 8px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.link-div:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .image-container {
@@ -69,9 +81,15 @@ body {
 
 .logga {
   color: white;
+
+  /* padding-left: 8px; */
+  padding-right: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 .logga:hover {
   color: white;
+  text-decoration: none;
 }
 .sido-rubrik {
   font-size: 2rem;

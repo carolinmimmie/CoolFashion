@@ -25,7 +25,11 @@ export default function BasicMenu() {
   return (
     <div>
       <Button
-        sx={{ color: "white", textTransform: "none", fontSize: "16px" }}
+        sx={{
+          color: "white",
+          textTransform: "none",
+          fontSize: "16px",
+        }}
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
