@@ -128,7 +128,8 @@ const Nav = (props: Props) => {
               sx={{
                 flexGrow: 0.05,
                 display: { xs: "block", sm: "block" },
-                fontSize: "20px",color:"white",
+                fontSize: "20px",
+                color: "white",
               }}
             >
               {
@@ -141,14 +142,12 @@ const Nav = (props: Props) => {
             <Link to={"/"}>
               <BasicMenu></BasicMenu>
             </Link>
-            <Link to={"/"}>
-              <BasicMenu></BasicMenu>
-            </Link>
+
             <Link to={"contact"}>
-              <BasicMenu></BasicMenu>
+              <div className="link-div">Kontakta Oss</div>
             </Link>
             <Link to={"admin"}>
-              <BasicMenu></BasicMenu>
+              <div className="link-div">Admin</div>
             </Link>
             {/* 
             <Box

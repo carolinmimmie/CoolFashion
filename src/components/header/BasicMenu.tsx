@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import DenseMenu from "./DenseMenu";
+import { TextFormat } from "@material-ui/icons";
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -24,14 +25,14 @@ export default function BasicMenu() {
   return (
     <div>
       <Button
-        sx={{ color: "white" }}
+        sx={{ color: "white", textTransform: "none", fontSize: "16px" }}
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        BasicLink
+        Produkter
       </Button>
       <Menu
         id="basic-menu"
