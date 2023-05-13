@@ -293,3 +293,30 @@ textarea {
 .gray-bg {
   background-color: gray;
 }
+
+
+.container_search {
+
+  margin-top: 150px;
+  
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+
+  
+}
+.search_products {
+  
+}
+
+.search_field {
+  margin-left: 390px;
+  margin-bottom: 50px;
+  
+}
+
+.search_wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 75vh; /* Set the minimum height of the wrapper to 100% of the viewport height */
+}
