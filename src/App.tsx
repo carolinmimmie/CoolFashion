@@ -11,20 +11,25 @@ import Admin from "./components/pages/admin/Admin";
 import Footer from "./components/footer/Footer";
 import SearchPage from "./components/pages/search-page/SearchPage";
 
+import { useContext } from "react";
+import { ContextProvider } from "./context/Context";
+
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <Header></Header>
-        <Routes>
-          <Route path="/" element={<Landingpage></Landingpage>} />
-          <Route path="/contact" element={<Contact></Contact>} />
-          <Route path="/admin" element={<Admin></Admin>} />
-          <Route path="/categories" element={<Categories></Categories>} />
-          <Route path="/search-page" element={<SearchPage></SearchPage>} />
-        </Routes>
-      <Footer></Footer>
-      </BrowserRouter>
+      <ContextProvider>
+        <BrowserRouter>
+          <Header></Header>
+          <Routes>
+            <Route path="/" element={<Landingpage></Landingpage>} />
+            <Route path="/contact" element={<Contact></Contact>} />
+            <Route path="/admin" element={<Admin></Admin>} />
+            <Route path="/categories" element={<Categories></Categories>} />
+            <Route path="/search-page" element={<SearchPage></SearchPage>} />
+          </Routes>
+          <Footer></Footer>
+        </BrowserRouter>
+      </ContextProvider>
     </div>
   );
 }

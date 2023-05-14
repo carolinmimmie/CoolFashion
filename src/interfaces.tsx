@@ -1,4 +1,5 @@
 import { Timestamp } from "firebase/firestore";
+import { Dispatch } from "react";
 
 interface IAllProducts {
   id: string;
@@ -19,4 +20,18 @@ interface IContactInformation {
   textfield: string;
 }
 
-export type { IAllProducts, IContactInformation };
+interface IContext {
+  productList: IAllProducts[];
+  setProductList: Dispatch<React.SetStateAction<IAllProducts[]>>;
+
+  searchTerm: string;
+  setSearchTerm: Dispatch<React.SetStateAction<string>>;
+
+  searchResults: IAllProducts[];
+  setSearchResults: Dispatch<React.SetStateAction<IAllProducts[]>>;
+  
+  showResults: boolean;
+  setShowResults: Dispatch<React.SetStateAction<boolean>>;
+}
+
+export type { IAllProducts, IContactInformation, IContext };

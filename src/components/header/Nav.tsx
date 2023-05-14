@@ -215,6 +215,9 @@ const Nav = (props: Props) => {
                 placeholder="Sök produkter"
                 inputProps={{ "aria-label": "search" }}
                 className="serchfield"
+                //Här under är det som behöver skickas till Milis komponent
+                // value={searchTerm}
+                // onChange={handleSearchChange}
               />
             </Search>
           </Box>
