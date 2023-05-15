@@ -3,7 +3,6 @@ import { IAllProducts, IContactInformation } from "../../../interfaces";
 import { getAllProducts, getContactInformation } from "../../../Api";
 import { Box } from "@mui/material";
 
-
 const ProductPage = () => {
   const [allProducts, setAllProducts] = useState<IAllProducts[]>([]);
   const [contactInformation, setContactInformation] = useState<
@@ -39,7 +38,6 @@ const ProductPage = () => {
           <p>
             {`Här är hämtat från All Products collection: 
           ${x.category}, 
-          ${x.gender}, 
           ${x.price},
           ${x.title},`}
           </p>
