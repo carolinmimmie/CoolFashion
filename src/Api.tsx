@@ -34,6 +34,17 @@ export const getPopularCategories = async () => {
   }));
 };
 
+export const getLikedProducts = async () => {
+  const q = query(AllProductsCollectionRef, where("liked", "==", "true"));
+
+  const data = await getDocs(q);
+  return data.docs.map((doc) => ({
+    ...(doc.data() as IAllProducts),
+
+    id: doc.id,
+  }));
+};
+
 const ContactInformationCollectionRef = collection(db, "Contact Information");
 
 export const getContactInformation = async () => {
