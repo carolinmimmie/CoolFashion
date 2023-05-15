@@ -5,11 +5,11 @@ import { IAllProducts } from "../../../interfaces";
 import ProductCard from "../../product-card/ProductCard";
 
 const MyFavoritePage = () => {
-  const { productList, setProductList } = useContext(Context);
+  const { productList } = useContext(Context);
 
-  const productCard = productList.map((product) => (
-    <ProductCard product={product}></ProductCard>
-  ));
+  const productCard = productList
+    .filter((product) => product.liked === true)
+    .map((product) => <ProductCard product={product}></ProductCard>);
   return (
     <>
       <div>

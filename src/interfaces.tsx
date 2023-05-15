@@ -29,12 +29,14 @@ interface IContext {
 
   searchResults: IAllProducts[];
   setSearchResults: Dispatch<React.SetStateAction<IAllProducts[]>>;
-  
+
   showResults: boolean;
   setShowResults: Dispatch<React.SetStateAction<boolean>>;
+
+  changeCompletedStatus: (id: string) => void;
 }
 interface IProductCard {
-  product:IAllProducts;
+  product: IAllProducts;
 }
 
-export type { IAllProducts, IContactInformation, IContext,IProductCard };
+export type { IAllProducts, IContactInformation, IContext, IProductCard };

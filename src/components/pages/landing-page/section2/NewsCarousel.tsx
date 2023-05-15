@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faHeart,
-  faMapMarkerAlt,
-  faPhoneAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useContext, useEffect, useState } from "react";
+
 import { IAllProducts } from "../../../../interfaces";
 import { getAllProducts } from "../../../../Api";
 import ProductCard from "../../../product-card/ProductCard";
+import Context from "../../../../context/Context";
 
 const NewsCarousel = () => {
-  const [productList, setProductList] = useState<IAllProducts[]>([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const products = await getAllProducts();
-      setProductList(products);
-    };
-    fetchProducts();
-  }, []);
+  const { productList } = useContext(Context);
 
   const productRows = productList
     .sort((a, b) => b.date.toDate().getTime() - a.date.toDate().getTime())

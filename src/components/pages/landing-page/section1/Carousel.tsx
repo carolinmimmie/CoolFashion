@@ -1,27 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
-import {
-  faEnvelope,
-  faHeart,
-  faMapMarkerAlt,
-  faPhoneAlt,
-} from "@fortawesome/free-solid-svg-icons";
-import CardCategories from "../../categories/CardCategories";
-import { getAllProducts, getPopularCategories } from "../../../../Api";
+import React, { useContext } from "react";
 import { IAllProducts } from "../../../../interfaces";
-import { Category } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import Context from "../../../../context/Context";
 
 const Carousel = () => {
-  const [productList, setProductList] = useState<IAllProducts[]>([]);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const products = await getAllProducts();
-      setProductList(products);
-    };
-    fetchCategories();
-  }, []);
+  const { productList } = useContext(Context);
 
   return (
     <div className="container">

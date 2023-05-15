@@ -23,16 +23,19 @@ export const getAllProducts = async () => {
   }));
 };
 
-export const getPopularCategories = async () => {
-  const q = query(AllProductsCollectionRef, where("category", "==", "hoodie"));
+//Denna funktionen är värdelös, för det finns inget som bestämmer vad som är
+//populärt eller inte
 
-  const data = await getDocs(q);
-  return data.docs.map((doc) => ({
-    ...(doc.data() as IAllProducts),
+// export const getPopularCategories = async () => {
+//   const q = query(AllProductsCollectionRef, where("category", "==", "hoodie"));
 
-    id: doc.id,
-  }));
-};
+//   const data = await getDocs(q);
+//   return data.docs.map((doc) => ({
+//     ...(doc.data() as IAllProducts),
+
+//     id: doc.id,
+//   }));
+// };
 
 export const getLikedProducts = async () => {
   const q = query(AllProductsCollectionRef, where("liked", "==", "true"));

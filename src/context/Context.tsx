@@ -20,6 +20,8 @@ const Context = createContext<IContext>({
 
   showResults: false,
   setShowResults: () => {},
+
+  changeCompletedStatus: () => {},
 });
 
 //DATAN Vill vi skicka vidare
@@ -68,6 +70,7 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
         setSearchResults,
         showResults,
         setShowResults,
+        changeCompletedStatus,
       }}
     >
       {children}

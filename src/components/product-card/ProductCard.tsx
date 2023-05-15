@@ -1,17 +1,20 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { IAllProducts, IProductCard } from "../../interfaces";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import Context from "../../context/Context";
 const ProductCard = ({ product }: IProductCard) => {
+  const { changeCompletedStatus } = useContext(Context);
   return (
     <div className="px-2">
       <div className="image-container">
         <img src={product.image} alt={product.image} />
         <div
           className="heart-icon"
-          style={{ color: product.liked ? "red" : "aliceblue" }}
+          style={{ color: product.liked ? "red" : "lightblue" }}
+          onClick={() => changeCompletedStatus(product.id)}
         >
           <FontAwesomeIcon icon={faHeart} />
         </div>
