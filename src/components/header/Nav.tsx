@@ -26,6 +26,7 @@ import BasicMenu from "./BasicMenu";
 import { getAllProducts } from "../../Api";
 import { IAllProducts } from "../../interfaces";
 import Context from "../../context/Context";
+import Cart from "./Cart";
 
 interface Props {
   window?: () => Window;
@@ -192,6 +193,7 @@ const Nav = (props: Props) => {
                   <FavoriteBorderIcon sx={{ ml: 2 }} />
                 </Link>
                 <PersonOutlineIcon sx={{ ml: 2 }} />
+
                 <WorkOutlineIcon sx={{ ml: 2 }} />
                 <div
                   className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
