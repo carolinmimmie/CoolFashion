@@ -68,6 +68,8 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
     setProductList(updatedProductsList);
   };
 
+  
+
   return (
     <Context.Provider
       value={{

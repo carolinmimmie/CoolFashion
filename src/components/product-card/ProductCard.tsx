@@ -6,7 +6,7 @@ import { IAllProducts, IProductCard } from "../../interfaces";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import Context from "../../context/Context";
 const ProductCard = ({ product }: IProductCard) => {
-  const { changeCompletedStatus } = useContext(Context);
+  const { changeLikedStatus, cartList, setCartList } = useContext(Context);
   return (
     <div className="px-2">
       <div className="image-container">
@@ -14,7 +14,7 @@ const ProductCard = ({ product }: IProductCard) => {
         <div
           className="heart-icon"
           style={{ color: product.liked ? "red" : "lightblue" }}
-          onClick={() => changeCompletedStatus(product.id)}
+          onClick={() => changeLikedStatus(product.id)}
         >
           <FontAwesomeIcon icon={faHeart} />
         </div>
