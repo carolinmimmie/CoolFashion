@@ -210,7 +210,7 @@ COOL FASHION
             />
           </Search>
           <Box sx={{ margin: "auto" }}>
-            <FavoriteBorderIcon sx={{ ml: 2 }} />
+          <Link to={"myfavorite-page"} className="icon-link"><FavoriteBorderIcon sx={{ ml: 2 }} /></Link>
             <PersonOutlineIcon sx={{ ml: 2 }} />
             <WorkOutlineIcon sx={{ ml: 2 }} />
           </Box>

@@ -13,6 +13,7 @@ import SearchPage from "./components/pages/search-page/SearchPage";
 
 import { useContext } from "react";
 import { ContextProvider } from "./context/Context";
+import MyFavoritePage from "./components/pages/MyFavoritePage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/admin" element={<Admin></Admin>} />
             <Route path="/categories" element={<Categories></Categories>} />
             <Route path="/search-page" element={<SearchPage></SearchPage>} />
+            <Route path="/myfavorites" element={<MyFavoritePage></MyFavoritePage>} />
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
