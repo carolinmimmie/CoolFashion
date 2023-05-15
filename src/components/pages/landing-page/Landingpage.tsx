@@ -16,7 +16,6 @@ const Landingpage = () => {
       <Herolandingpage></Herolandingpage>
       <Section1></Section1>
       <Section2></Section2>
-      <Cart></Cart>
     </div>
   );
 };

@@ -70,7 +70,7 @@ export const getCartCollection = async () => {
   }));
 };
 
-export const addToCart = async (product: IAllProducts) => {
+export const addToCartCollection = async (product: IAllProducts) => {
   await addDoc(CartCollectionRef, {
     category: product.category,
     image: product.image,
@@ -79,6 +79,7 @@ export const addToCart = async (product: IAllProducts) => {
     title: product.title,
     date: product.date,
   });
+  console.log()
   // getAllProducts();
 };
 

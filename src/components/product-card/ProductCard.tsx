@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { IAllProducts, IProductCard } from "../../interfaces";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import Context from "../../context/Context";
+import { addToCartCollection } from "../../Api";
 const ProductCard = ({ product }: IProductCard) => {
   const { changeLikedStatus, cartList, setCartList } = useContext(Context);
   return (
@@ -18,7 +19,10 @@ const ProductCard = ({ product }: IProductCard) => {
         >
           <FontAwesomeIcon icon={faHeart} />
         </div>
-        <div className="workoutline-icon">
+        <div
+          className="workoutline-icon"
+          onClick={() => addToCartCollection(product)}
+        >
           <WorkOutlineIcon sx={{ ml: 2 }} />
         </div>
       </div>
