@@ -193,6 +193,20 @@ const Nav = (props: Props) => {
                 </Link>
                 <PersonOutlineIcon sx={{ ml: 2 }} />
                 <WorkOutlineIcon sx={{ ml: 2 }} />
+                <div
+                  className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
+                  style={{
+                    color: "white",
+                    width: "1.6rem",
+                    height: "1.6rem",
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    transform: "translate(-50%, -125%)",
+                  }}
+                >
+                  {/* {{cartQuantity}}4 */}15
+                </div>
               </Box>
             </Box>
           </Toolbar>
