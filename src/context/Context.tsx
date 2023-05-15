@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { IAllProducts, IContext } from "../interfaces";
-import { getAllProducts, createProduct } from "../Api";
+import { getAllProducts, createProduct, getCartCollection } from "../Api";
 import { storage } from "../firebase.config";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
@@ -24,7 +24,10 @@ const Context = createContext<IContext>({
   showResults: false,
   setShowResults: () => {},
 
-  changeCompletedStatus: () => {},
+  changeLikedStatus: () => {},
+
+  cartList: [],
+  setCartList: () => {},
 });
 
 //DATAN Vill vi skicka vidare
@@ -33,27 +36,14 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState<IAllProducts[]>([]);
   const [showResults, setShowResults] = useState(false);
-
-  // const [imageUpload, setImageUpload] = useState<any>(null);
-
-  // const uploadImage = async () => {
-  //   if (!imageUpload || imageUpload.length === 0) {
-  //     alert("Välj fil");
-  //     return;
-  //   }
-  //   const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-  //   const snapshot = await uploadBytes(imageRef, imageUpload);
-  //   const url = await getDownloadURL(snapshot.ref);
-  //   formData.image = url;
-  //   console.log(formData);
-  //   createProduct(formData);
-  //   alert("Produkten är uppladdad");
-  // };
+  const [cartList, setCartList] = useState<IAllProducts[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getAllProducts();
       setProductList(products);
+      const cartItems = await getCartCollection();
+      setCartList(cartItems);
     };
     fetchProducts();
   }, []);
@@ -68,7 +58,7 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
     setShowResults(searchTerm !== "");
   }, [searchTerm, productList]);
 
-  const changeCompletedStatus = (id: string) => {
+  const changeLikedStatus = (id: string) => {
     const updatedProductsList = productList.map((x) => {
       if (id === x.id) {
         return { ...x, liked: !x.liked };
@@ -89,7 +79,9 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
         setSearchResults,
         showResults,
         setShowResults,
-        changeCompletedStatus,
+        changeLikedStatus,
+        cartList,
+        setCartList,
       }}
     >
       {children}

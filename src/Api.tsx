@@ -59,6 +59,34 @@ export const getContactInformation = async () => {
   }));
 };
 
+const CartCollectionRef = collection(db, "Cart Collection");
+
+export const getCartCollection = async () => {
+  const data = await getDocs(CartCollectionRef);
+  return data.docs.map((doc) => ({
+    ...(doc.data() as IAllProducts),
+
+    id: doc.id,
+  }));
+};
+
+export const addToCart = async (product: IAllProducts) => {
+  await addDoc(CartCollectionRef, {
+    category: product.category,
+    image: product.image,
+    liked: product.liked,
+    price: product.price,
+    title: product.title,
+    date: product.date,
+  });
+  // getAllProducts();
+};
+
+export const deleteFromCart = async (id: string) => {
+  await deleteDoc(doc(CartCollectionRef, id));
+  getCartCollection();
+};
+
 export const createProduct = async (product: IAllProducts) => {
   await addDoc(AllProductsCollectionRef, {
     category: product.category,

@@ -31,7 +31,10 @@ interface IContext {
   showResults: boolean;
   setShowResults: Dispatch<React.SetStateAction<boolean>>;
 
-  changeCompletedStatus: (id: string) => void;
+  changeLikedStatus: (id: string) => void;
+
+  cartList: IAllProducts[];
+  setCartList: Dispatch<React.SetStateAction<IAllProducts[]>>;
 }
 interface IProductCard {
   product: IAllProducts;
