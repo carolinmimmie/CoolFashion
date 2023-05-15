@@ -33,5 +33,8 @@ interface IContext {
   showResults: boolean;
   setShowResults: Dispatch<React.SetStateAction<boolean>>;
 }
+interface IProductCard {
+  product:IAllProducts;
+}
 
-export type { IAllProducts, IContactInformation, IContext };
+export type { IAllProducts, IContactInformation, IContext,IProductCard };
