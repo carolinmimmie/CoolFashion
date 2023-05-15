@@ -6,7 +6,10 @@ import React, {
   useState,
 } from "react";
 import { IAllProducts, IContext } from "../interfaces";
-import { getAllProducts } from "../Api";
+import { getAllProducts, createProduct } from "../Api";
+import { storage } from "../firebase.config";
+import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
+import { v4 } from "uuid";
 
 const Context = createContext<IContext>({
   productList: [],
@@ -30,6 +33,22 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState<IAllProducts[]>([]);
   const [showResults, setShowResults] = useState(false);
+
+  // const [imageUpload, setImageUpload] = useState<any>(null);
+
+  // const uploadImage = async () => {
+  //   if (!imageUpload || imageUpload.length === 0) {
+  //     alert("Välj fil");
+  //     return;
+  //   }
+  //   const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+  //   const snapshot = await uploadBytes(imageRef, imageUpload);
+  //   const url = await getDownloadURL(snapshot.ref);
+  //   formData.image = url;
+  //   console.log(formData);
+  //   createProduct(formData);
+  //   alert("Produkten är uppladdad");
+  // };
 
   useEffect(() => {
     const fetchProducts = async () => {

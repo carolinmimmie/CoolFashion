@@ -70,6 +70,7 @@ export const createProduct = async (product: IAllProducts) => {
     date: product.date,
     addedToCart: product.addedToCart,
   });
+  // getAllProducts();
 };
 
 export const createContactInformation = async (info: IContactInformation) => {

@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IAllProducts } from "../../../interfaces";
 import { createProduct, getAllProducts } from "../../../Api";
 import { storage } from "../../../firebase.config";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { Timestamp } from "firebase/firestore";
+import Context from "../../../context/Context";
 
 const AdminForm = () => {
+  const { productList, setProductList } = useContext(Context);
 
   const [formData, setFormData] = useState<IAllProducts>({
     id: "",
@@ -32,8 +34,8 @@ const AdminForm = () => {
     const url = await getDownloadURL(snapshot.ref);
     formData.image = url;
     console.log(formData);
+    // createProduct(formData);
     alert("Produkten är uppladdad");
-    createProduct(formData);
   };
 
   const handleImage = (event: React.ChangeEvent<any>) => {
@@ -48,11 +50,30 @@ const AdminForm = () => {
     const { name } = event.target;
     setFormData({ ...formData, [name]: event.target.value });
   };
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   event?.preventDefault();
+  //   uploadImage();
+  //   console.log(formData);
+  //   createProduct(formData);
+  //   const newArray: IAllProducts[] = [...productList, formData];
+  //   setProductList(newArray);
+  // };
+
+  //Nya mega versionen av funktionen som har try, catch. Så att den inte
+  //ska råka ladda upp objektet innan den lyckats läsa in bilden
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
-    uploadImage();
-    console.log(formData);
-    getAllProducts();
+    try {
+      await uploadImage();
+      console.log(formData);
+      await createProduct(formData);
+      const newArray: IAllProducts[] = [...productList, formData];
+      setProductList(newArray);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
