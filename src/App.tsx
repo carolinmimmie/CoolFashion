@@ -13,7 +13,7 @@ import SearchPage from "./components/pages/search-page/SearchPage";
 
 import { useContext } from "react";
 import { ContextProvider } from "./context/Context";
-import MyFavoritePage from "./components/pages/MyFavoritePage";
+import MyFavoritePage from "./components/pages/myfavorite/MyFavoritePage";
 
 function App() {
   return (
