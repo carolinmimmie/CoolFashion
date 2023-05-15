@@ -44,25 +44,6 @@ const NewsCarousel = () => {
               <div className="row">
                 {row.map((x: IAllProducts) => (
                   <div key={x.id} className="col-md-6">
-                    {/* <div className="px-2">
-                      <Link to="categories">
-                        <div className="image-container">
-                          <img src={x.image} alt={x.image} />
-                        </div>
-                      </Link>
-                      <Link to="categories">
-                        <div
-                          className="title"
-                          style={{ fontSize: "19px", color: "black" }}
-                        >
-                          {x.title.charAt(0).toUpperCase() + x.title.slice(1)}
-                        </div>
-                      </Link>
-                      <div>{x.price} kr</div>
-                      <div className="heart-icon">
-                        <FontAwesomeIcon icon={faHeart} />
-                      </div>
-                    </div> */}
                     <ProductCard product={x}></ProductCard>
                   </div>
                 ))}

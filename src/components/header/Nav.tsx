@@ -30,6 +30,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import ProductCard from "../product-card/ProductCard";
 
 type Anchor = "right";
 
@@ -107,15 +108,8 @@ const Nav = (props: Props) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
+        {cartList.map((x: IAllProducts) => (
+          <ProductCard key={x.id} product={x}></ProductCard>
         ))}
       </List>
       <Divider />
@@ -138,7 +132,7 @@ const Nav = (props: Props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const { searchTerm, setSearchTerm, searchResults, showResults } =
+  const { searchTerm, setSearchTerm, searchResults, showResults, cartList } =
     useContext(Context);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
