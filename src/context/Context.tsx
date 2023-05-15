@@ -22,6 +22,8 @@ const Context = createContext<IContext>({
   setShowResults: () => {},
 });
 
+
+//DATAN Vill vi skicka vidare
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [productList, setProductList] = useState<IAllProducts[]>([]);
   const [searchTerm, setSearchTerm] = useState("");

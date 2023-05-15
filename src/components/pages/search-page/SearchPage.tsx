@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Table, Form } from "react-bootstrap";
 import { getAllProducts } from "../../../Api";
+import Context from "../../../context/Context";
 import { IAllProducts } from "../../../interfaces";
 
 const SearchPage = () => {
-  const [productList, setProductList] = useState<IAllProducts[]>([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState<IAllProducts[]>([]);
-  const [showResults, setShowResults] = useState(false);
-
+  // const [productList, setProductList] = useState<IAllProducts[]>([]);
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const [searchResults, setSearchResults] = useState<IAllProducts[]>([]);
+  // const [showResults, setShowResults] = useState(false);
+  const {productList,setProductList,searchTerm,setSearchTerm,searchResults, setSearchResults,showResults, setShowResults} = useContext(Context);
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getAllProducts();

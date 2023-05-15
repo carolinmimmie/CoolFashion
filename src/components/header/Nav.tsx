@@ -15,7 +15,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -25,6 +25,8 @@ import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import BasicMenu from "./BasicMenu";
 import { getAllProducts } from "../../Api";
 import { IAllProducts } from "../../interfaces";
+import Context from "../../context/Context";
+
 
 
 interface Props {
@@ -78,11 +80,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Nav = (props: Props) => {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [productList, setProductList] = useState<IAllProducts[]>([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState<IAllProducts[]>([]);
-  const [showResults, setShowResults] = useState(false);
-
+  // const [productList, setProductList] = useState<IAllProducts[]>([]);
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const [searchResults, setSearchResults] = useState<IAllProducts[]>([]);
+  // const [showResults, setShowResults] = useState(false);
+const {productList,setProductList,searchTerm,setSearchTerm,searchResults, setSearchResults,showResults, setShowResults} = useContext(Context);
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getAllProducts();
