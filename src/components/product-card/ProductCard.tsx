@@ -7,25 +7,23 @@ import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 const ProductCard = ({ product }: IProductCard) => {
   return (
     <div className="px-2">
-      <Link to="categories">
-        <div className="image-container">
-          <img src={product.image} alt={product.image} />
-          <div
-            className="heart-icon"
-            style={{ color: product.liked ? "red" : "pink" }}
-          >
-            <FontAwesomeIcon icon={faHeart} />
-          </div>
-          <div className="workoutline-icon">
-            <WorkOutlineIcon sx={{ ml: 2 }} />
-          </div>
+      <div className="image-container">
+        <img src={product.image} alt={product.image} />
+        <div
+          className="heart-icon"
+          style={{ color: product.liked ? "red" : "aliceblue" }}
+        >
+          <FontAwesomeIcon icon={faHeart} />
         </div>
-      </Link>
-      <Link to="categories">
-        <div className="title" style={{ fontSize: "19px", color: "black" }}>
-          {product.title.charAt(0).toUpperCase() + product.title.slice(1)}
+        <div className="workoutline-icon">
+          <WorkOutlineIcon sx={{ ml: 2 }} />
         </div>
-      </Link>
+      </div>
+
+      <div className="title" style={{ fontSize: "19px", color: "black" }}>
+        {product.title.charAt(0).toUpperCase() + product.title.slice(1)}
+      </div>
+
       <div>{product.price} kr</div>
     </div>
   );

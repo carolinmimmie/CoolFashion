@@ -22,7 +22,6 @@ const Context = createContext<IContext>({
   setShowResults: () => {},
 });
 
-
 //DATAN Vill vi skicka vidare
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [productList, setProductList] = useState<IAllProducts[]>([]);
@@ -47,6 +46,16 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
     setSearchResults(results);
     setShowResults(searchTerm !== "");
   }, [searchTerm, productList]);
+
+  const changeCompletedStatus = (id: string) => {
+    const updatedProductsList = productList.map((x) => {
+      if (id === x.id) {
+        return { ...x, liked: !x.liked };
+      }
+      return x;
+    });
+    setProductList(updatedProductsList);
+  };
 
   return (
     <Context.Provider

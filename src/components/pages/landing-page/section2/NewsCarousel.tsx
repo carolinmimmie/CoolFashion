@@ -9,9 +9,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { IAllProducts } from "../../../../interfaces";
 import { getAllProducts } from "../../../../Api";
+import ProductCard from "../../../product-card/ProductCard";
 
 const NewsCarousel = () => {
-
   const [productList, setProductList] = useState<IAllProducts[]>([]);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const NewsCarousel = () => {
               <div className="row">
                 {row.map((x: IAllProducts) => (
                   <div key={x.id} className="col-md-6">
-                    <div className="px-2">
+                    {/* <div className="px-2">
                       <Link to="categories">
                         <div className="image-container">
                           <img src={x.image} alt={x.image} />
@@ -76,7 +76,8 @@ const NewsCarousel = () => {
                       <div className="heart-icon">
                         <FontAwesomeIcon icon={faHeart} />
                       </div>
-                    </div>
+                    </div> */}
+                    <ProductCard product={x}></ProductCard>
                   </div>
                 ))}
               </div>

@@ -221,7 +221,12 @@ textarea {
   margin: 8px;
   font-size: 30px;
   pointer-events: auto;
-  color: white;
+  /* color: white; */
+  /* border: 1px solid black; */
+}
+.heart-icon:hover {
+  color: red;
+  cursor: pointer;
 }
 .workoutline-icon {
   position: absolute;
@@ -255,19 +260,15 @@ textarea {
   background-color: rgb(235, 237, 237);
 } */
 
-.heart-icon:hover {
-  color: red;
-  cursor: pointer;
-}
-.heart-icon2 {
+/* .heart-icon2 {
   position: absolute;
   bottom: 100px;
   right: 70px;
   margin: 8px;
-  color: purple;
+  color: aliceblue;
   font-size: 30px;
   pointer-events: auto;
-}
+} */
 .cursor-container {
   pointer-events: none;
 }

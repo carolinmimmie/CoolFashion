@@ -86,10 +86,6 @@ const Carousel = () => {
                               x.category.slice(1)}
                           </div>{" "}
                         </Link>
-                        {/* <div>{x.price} kr</div> */}
-                        <div className="heart-icon">
-                          <FontAwesomeIcon icon={faHeart} />
-                        </div>
                       </div>
                     </div>
                   ))}
