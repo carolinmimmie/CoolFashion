@@ -14,12 +14,10 @@ const AdminForm = () => {
     id: "",
     category: "",
     image: "",
-    gender: "",
     liked: false,
     price: 99,
     title: "",
     date: Timestamp.now(),
-    addedToCart: false,
   });
 
   const [imageUpload, setImageUpload] = useState<any>(null);
@@ -50,18 +48,6 @@ const AdminForm = () => {
     const { name } = event.target;
     setFormData({ ...formData, [name]: event.target.value });
   };
-
-  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-  //   event?.preventDefault();
-  //   uploadImage();
-  //   console.log(formData);
-  //   createProduct(formData);
-  //   const newArray: IAllProducts[] = [...productList, formData];
-  //   setProductList(newArray);
-  // };
-
-  //Nya mega versionen av funktionen som har try, catch. Så att den inte
-  //ska råka ladda upp objektet innan den lyckats läsa in bilden
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();

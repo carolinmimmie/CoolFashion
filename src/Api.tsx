@@ -63,12 +63,10 @@ export const createProduct = async (product: IAllProducts) => {
   await addDoc(AllProductsCollectionRef, {
     category: product.category,
     image: product.image,
-    gender: product.gender,
     liked: product.liked,
     price: product.price,
     title: product.title,
     date: product.date,
-    addedToCart: product.addedToCart,
   });
   // getAllProducts();
 };
