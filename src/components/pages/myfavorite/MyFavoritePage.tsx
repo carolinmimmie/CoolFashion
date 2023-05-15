@@ -5,12 +5,14 @@ import { IAllProducts } from "../../../interfaces";
 import ProductCard from "../../product-card/ProductCard";
 
 const MyFavoritePage = () => {
-  const {productList,setProductList} = useContext(Context);
-  
-  const productCard = productList.map((product) => <ProductCard product={product}></ProductCard>);
+  const { productList, setProductList } = useContext(Context);
+
+  const productCard = productList.map((product) => (
+    <ProductCard product={product}></ProductCard>
+  ));
   return (
     <>
-      <div style={{ marginTop: "5rem", minHeight: "500px" }}>
+      <div>
         <h3 className="sido-rubrik">Favoriter</h3>
       </div>
       <div className="container">{productCard}</div>

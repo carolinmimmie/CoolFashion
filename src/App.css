@@ -54,14 +54,13 @@ body {
   color: black;
 }
 
-.icon-link{
+.icon-link {
   color: white;
 }
 
-.icon-link:hover{
+.icon-link:hover {
   color: white;
 }
-
 
 .image-container {
   width: 100%;
@@ -113,7 +112,7 @@ body {
 .sido-rubrik {
   font-size: 2rem;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 5rem;
 }
 /* forms */
 
@@ -222,7 +221,16 @@ textarea {
   margin: 8px;
   font-size: 30px;
   pointer-events: auto;
-  color: white; /* set the color of the heart to white */
+  color: white;
+}
+.workoutline-icon {
+  position: absolute;
+  bottom: 60px;
+  right: 80px;
+  margin: 8px;
+  font-size: 30px;
+  pointer-events: auto;
+  color: black;
 }
 
 .stronger {
@@ -256,7 +264,7 @@ textarea {
   bottom: 100px;
   right: 70px;
   margin: 8px;
-  color: aliceblue;
+  color: purple;
   font-size: 30px;
   pointer-events: auto;
 }
@@ -303,25 +311,19 @@ textarea {
   background-color: gray;
 }
 
-
 .container_search {
-
   margin-top: 150px;
-  
+
   justify-content: center;
   text-align: center;
   flex-direction: column;
-
-  
 }
 .search_products {
-  
 }
 
 .search_field {
   margin-left: 390px;
   margin-bottom: 50px;
-  
 }
 
 .search_wrapper {
@@ -329,8 +331,6 @@ textarea {
   flex-direction: column;
   min-height: 75vh; /* Set the minimum height of the wrapper to 100% of the viewport height */
 }
-
-
 
 .search_results {
   text-align: center;

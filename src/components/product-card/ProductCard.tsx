@@ -3,14 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import { IAllProducts, IProductCard } from "../../interfaces";
-
-
-const ProductCard = ({product}: IProductCard) => {
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+const ProductCard = ({ product }: IProductCard) => {
   return (
     <div className="px-2">
       <Link to="categories">
         <div className="image-container">
           <img src={product.image} alt={product.image} />
+          <div
+            className="heart-icon"
+            style={{ color: product.liked ? "red" : "pink" }}
+          >
+            <FontAwesomeIcon icon={faHeart} />
+          </div>
+          <div className="workoutline-icon">
+            <WorkOutlineIcon sx={{ ml: 2 }} />
+          </div>
         </div>
       </Link>
       <Link to="categories">
@@ -19,9 +27,6 @@ const ProductCard = ({product}: IProductCard) => {
         </div>
       </Link>
       <div>{product.price} kr</div>
-      <div className="heart-icon">
-        <FontAwesomeIcon icon={faHeart} />
-      </div>
     </div>
   );
 };
