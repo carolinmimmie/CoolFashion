@@ -6,10 +6,13 @@ import { IAllProducts, IProductCard } from "../../interfaces";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import Context from "../../context/Context";
 import { addToCartCollection } from "../../Api";
+import { Button } from "@mui/material";
 const ProductCard = ({ product }: IProductCard) => {
   const { changeLikedStatus, cartList, setCartList } = useContext(Context);
-  const updateCartCollection = (product: IAllProducts) => {const newArray: IAllProducts[] = [...cartList, product];
-  setCartList(newArray);} 
+  const updateCartCollection = (product: IAllProducts) => {
+    const newArray: IAllProducts[] = [...cartList, product];
+    setCartList(newArray);
+  };
 
   return (
     <div className="px-2">
@@ -33,12 +36,24 @@ const ProductCard = ({ product }: IProductCard) => {
           <FontAwesomeIcon className="heart-icon" icon={faHeart} />
         </div>
         <div
-          onClick={() => {addToCartCollection(product); updateCartCollection(product);}}
+          onClick={() => {
+            addToCartCollection(product);
+            updateCartCollection(product);
+          }}
         >
-          <WorkOutlineIcon
-            className="workoutline-icon"
-            sx={{ fontSize: "35px" }}
-          />
+          <Button
+            sx={{
+              bgcolor: " rgba(000000, 0, 0, 0.8);",
+              ":hover": { bgcolor: "black ;" },
+            }}
+            variant="contained"
+          >
+           KÖP
+            {/* <WorkOutlineIcon
+              className="workoutline-icon"
+              sx={{ fontSize: "35px" }}
+            /> */}
+          </Button>
         </div>
       </div>
     </div>

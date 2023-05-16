@@ -237,8 +237,8 @@ textarea {
   margin: 8px; */
   /* pointer-events: auto; */
   margin-bottom: 4px;
-  font-size: 30px;
-  color: black;
+  font-size: 10px;
+  color: white;
 }
 
 .workoutline-icon:hover {

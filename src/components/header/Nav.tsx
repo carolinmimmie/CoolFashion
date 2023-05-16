@@ -108,19 +108,38 @@ const Nav = (props: Props) => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <Typography variant="h6" sx={{padding: 1}}>Din varukorg</Typography>
+      <Typography variant="h6" sx={{ padding: 1 }}>
+        Din varukorg
+      </Typography>
       <List>
         {cartList.map((x: IAllProducts) => (
           <ProductCard key={x.id} product={x}></ProductCard>
         ))}
       </List>
       <Divider />
-      <Typography sx={{padding: 1 }}>Summa:</Typography>
+      <Typography sx={{ padding: 1 }}>Summa:</Typography>
       <Divider />
-     <Box sx={{padding: 2}}>
-      <Button variant="contained" sx={{bgcolor: "black"}}>Handla mer</Button>
-      <Button variant="contained" sx={{bgcolor: "black", ml: 1}}>Till kassan </Button>
-     </Box>
+      <Box sx={{ padding: 2 }}>
+        <Button
+          variant="contained"
+          sx={{
+            bgcolor: " rgba(000000, 0, 0, 0.8);",
+            ":hover": { bgcolor: "black ;" },
+          }}
+        >
+          Handla mer
+        </Button>
+        <Button
+          variant="contained"
+          sx={{
+            ml: 1,
+            bgcolor: " rgba(000000, 0, 0, 0.8);",
+            ":hover": { bgcolor: "black ;" },
+          }}
+        >
+          Till kassan{" "}
+        </Button>
+      </Box>
     </Box>
   );
   //Slut Cart
