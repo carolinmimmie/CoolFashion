@@ -37,30 +37,31 @@ const ProductCard = ({ product }: IProductCard) => {
           onClick={() => changeLikedStatus(product.id)}
         >
           <FontAwesomeIcon className="heart-icon" icon={faHeart} />
+            <FacebookShareButton url={shareUrl}>
+              <FacebookIcon size={30} className="shareicons"></FacebookIcon>
+            </FacebookShareButton>
         </div>
-        <div
-          onClick={() => {
-            addToCartCollection(product);
-            updateCartCollection(product);
+      </div>
+      <div
+        className="cardButton"
+        onClick={() => {
+          addToCartCollection(product);
+          updateCartCollection(product);
+        }}
+      >
+        <Button
+          sx={{
+            bgcolor: " rgba(000000, 0, 0, 0.8);",
+            ":hover": { bgcolor: "black ;" },
           }}
+          variant="contained"
         >
-          <Button
-            sx={{
-              bgcolor: " rgba(000000, 0, 0, 0.8);",
-              ":hover": { bgcolor: "black ;" },
-            }}
-            variant="contained"
-          >
-           KÖP
-            {/* <WorkOutlineIcon
+          KÖP
+          {/* <WorkOutlineIcon
               className="workoutline-icon"
               sx={{ fontSize: "35px" }}
             /> */}
-          </Button>
-          <FacebookShareButton url={shareUrl}>
-  <FacebookIcon size={30} className="shareicons"></FacebookIcon >
-</FacebookShareButton>
-        </div>
+        </Button>
       </div>
     </div>
   );
