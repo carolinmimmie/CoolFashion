@@ -52,22 +52,22 @@ const Carousel = () => {
                     <div key={x.id} className="col-md-3">
                       <div className="px-2">
                         <Link to="categories" style={{ color: "black" }}>
-                          <img
-                            src={x.image}
-                            alt={x.category}
-                            width="700"
-                            height="320"
-                          />{" "}
+                          <div className="image-wrapper">
+                            <img
+                              src={x.image}
+                              alt={x.category}
+                              className="carousel-image-1"
+                            />
+                          </div>
                         </Link>
                         <Link to="categories">
-                          {" "}
                           <div
                             className="carousel-title"
                             style={{ fontSize: "19px", color: "black" }}
                           >
                             {x.category.charAt(0).toUpperCase() +
                               x.category.slice(1)}
-                          </div>{" "}
+                          </div>
                         </Link>
                       </div>
                     </div>
@@ -83,10 +83,7 @@ const Carousel = () => {
           role="button"
           data-slide="prev"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="sr-only">Previous</span>
         </a>
         <a
@@ -95,10 +92,7 @@ const Carousel = () => {
           role="button"
           data-slide="next"
         >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="sr-only">Next</span>
         </a>
       </div>
@@ -107,3 +101,4 @@ const Carousel = () => {
 };
 
 export default Carousel;
+

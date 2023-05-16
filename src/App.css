@@ -391,3 +391,21 @@ textarea {
     display: none;
   }
 }
+
+
+
+
+@media (max-width: 768px) {
+  .carousel-image-1 {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .carousel-image-1 {
+    width: 700px; 
+    height: 350px; 
+  }
+}
