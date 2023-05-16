@@ -111,7 +111,7 @@ const Nav = (props: Props) => {
       <Typography variant="h6" sx={{ padding: 1 }}>
         Din varukorg
       </Typography>
-      <List>
+      <List className = "productcard-navcontainer">
         {cartList.map((x: IAllProducts) => (
           <ProductCard key={x.id} product={x}></ProductCard>
         ))}

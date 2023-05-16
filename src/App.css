@@ -217,10 +217,15 @@ textarea {
   color: rgb(0, 0, 0);
   margin-left: -230px;
 }
-
+/* Sätter bakgrundfärg på produktkortet */
 .px-2 {
-  background-color: whitesmoke;
-  padding-bottom: 3rem;
+  /* background-color: whitesmoke; */
+}
+
+.productcard-navcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .heart-icon {
   /* position: absolute;
