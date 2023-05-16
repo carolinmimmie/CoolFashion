@@ -1,6 +1,7 @@
 import {
   alpha,
   AppBar,
+  autocompleteClasses,
   IconButton,
   InputBase,
   styled,
@@ -107,24 +108,19 @@ const Nav = (props: Props) => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <Typography variant="h6" sx={{padding: 1}}>Din varukorg</Typography>
       <List>
         {cartList.map((x: IAllProducts) => (
           <ProductCard key={x.id} product={x}></ProductCard>
         ))}
       </List>
       <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      <Typography sx={{padding: 1 }}>Summa:</Typography>
+      <Divider />
+     <Box sx={{padding: 2}}>
+      <Button variant="contained" sx={{bgcolor: "black"}}>Handla mer</Button>
+      <Button variant="contained" sx={{bgcolor: "black", ml: 1}}>Till kassan </Button>
+     </Box>
     </Box>
   );
   //Slut Cart
