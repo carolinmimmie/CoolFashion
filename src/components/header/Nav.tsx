@@ -119,7 +119,9 @@ const Nav = (props: Props) => {
         ))}
       </List>
       <Divider />
-      <Typography sx={{ padding: 1 }}>Summa:</Typography>
+      <Typography sx={{ padding: 1 }}>Summa:
+      {cartList.reduce((total, product) => total + product.price, 0)}
+      </Typography>
       <Divider />
       <Box className="cartbuttons-container" >
         <Button
