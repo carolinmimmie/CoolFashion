@@ -102,7 +102,9 @@ const Nav = (props: Props) => {
     };
 
   const list = (anchor: Anchor) => (
+    // Start Cart
     <Box
+      className="cart-container"
       //   sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -111,7 +113,7 @@ const Nav = (props: Props) => {
       <Typography variant="h6" sx={{ padding: 1 }}>
         Din varukorg
       </Typography>
-      <List className = "productcard-navcontainer">
+      <List className="productcard-navcontainer">
         {cartList.map((x: IAllProducts) => (
           <ProductCard key={x.id} product={x}></ProductCard>
         ))}
@@ -119,12 +121,14 @@ const Nav = (props: Props) => {
       <Divider />
       <Typography sx={{ padding: 1 }}>Summa:</Typography>
       <Divider />
-      <Box sx={{ padding: 2 }}>
+      <Box className="cartbuttons-container" >
         <Button
           variant="contained"
           sx={{
             bgcolor: " rgba(000000, 0, 0, 0.8);",
             ":hover": { bgcolor: "black ;" },
+            // ml: "10px",
+            borderRadius: "0",
           }}
         >
           Handla mer
@@ -132,9 +136,9 @@ const Nav = (props: Props) => {
         <Button
           variant="contained"
           sx={{
-            ml: 1,
             bgcolor: " rgba(000000, 0, 0, 0.8);",
             ":hover": { bgcolor: "black ;" },
+            ml: "10px",  borderRadius: "0",
           }}
         >
           Till kassan{" "}
@@ -274,6 +278,7 @@ const Nav = (props: Props) => {
                   onChange={handleSearchChange}
                 />
               </Search>
+
               <Box sx={{ margin: "auto" }}>
                 <Link to={"myfavorites"} className="icon-link">
                   <FavoriteBorderIcon sx={{ ml: 2 }} />

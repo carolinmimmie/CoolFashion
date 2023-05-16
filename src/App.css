@@ -81,7 +81,17 @@ body {
   flex-direction: row;
   gap: 1rem;
 }
-
+.productcard-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.icon-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+}
 .image-container img {
   width: 100%;
   height: auto;
@@ -207,7 +217,6 @@ textarea {
   width: 100px;
   outline: black;
   background-size: 100%, 100%;
-
   background-image: none;
 }
 
@@ -217,9 +226,13 @@ textarea {
   color: rgb(0, 0, 0);
   margin-left: -230px;
 }
+.cart-container {
+  padding: 1rem;
+}
 /* Sätter bakgrundfärg på produktkortet */
-.px-2 {
-  /* background-color: whitesmoke; */
+.productcard-container {
+  background-color: whitesmoke;
+  padding: 0rem;
 }
 
 .productcard-navcontainer {
@@ -263,6 +276,10 @@ textarea {
   gap: 1, 5;
   font-size: 3;
 }
+.cartbuttons-container {
+  display: flex;
+  justify-content: space-between;
+}
 
 .shareicons {
   margin-bottom: 6px;
@@ -284,9 +301,9 @@ textarea {
   background-color: #0a0a0a; /* set the background color of the active indicator to white */
 }
 
-/* .title {
-  background-color: rgb(235, 237, 237);
-} */
+.carousel-title {
+  text-align: left;
+}
 
 /* .heart-icon2 {
   position: absolute;

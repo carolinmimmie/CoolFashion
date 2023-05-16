@@ -62,7 +62,7 @@ const Carousel = () => {
                         <Link to="categories">
                           {" "}
                           <div
-                            className="title"
+                            className="carousel-title"
                             style={{ fontSize: "19px", color: "black" }}
                           >
                             {x.category.charAt(0).toUpperCase() +
