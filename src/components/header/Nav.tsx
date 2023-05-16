@@ -181,6 +181,7 @@ const Nav = (props: Props) => {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
+
   return (
     <>
       {/* <div>
@@ -293,7 +294,7 @@ const Nav = (props: Props) => {
                     transform: "translate(-50%, -125%)",
                   }}
                 >
-                  {/* {{cartQuantity}}4 */}15
+                  {cartList.length}
                 </div>
               </Box>
             </Box>

@@ -70,6 +70,14 @@ body {
   overflow: hidden;
 }
 
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 .image-container img {
   width: 100%;
   height: auto;
@@ -168,13 +176,7 @@ textarea {
   cursor: pointer;
 }
 
-@media (max-width: 900px) {
-  .logga {
-  }
-  .nav-container-links-and-h1 {
-    display: none;
-  }
-}
+
 
 .container {
   display: flex;
@@ -215,12 +217,12 @@ textarea {
 }
 
 .heart-icon {
-  position: absolute;
+  /* position: absolute;
   bottom: 60px;
   right: 40px;
   margin: 8px;
+  pointer-events: auto; */
   font-size: 30px;
-  pointer-events: auto;
   /* color: white; */
   /* border: 1px solid black; */
 }
@@ -229,13 +231,18 @@ textarea {
   cursor: pointer;
 }
 .workoutline-icon {
-  position: absolute;
+  /* position: absolute;
   bottom: 60px;
   right: 80px;
-  margin: 8px;
+  margin: 8px; */
+  /* pointer-events: auto; */
+  margin-bottom: 4px;
   font-size: 30px;
-  pointer-events: auto;
   color: black;
+}
+
+.workoutline-icon:hover {
+  cursor: pointer;
 }
 
 .stronger {
@@ -336,4 +343,14 @@ textarea {
 .search_results {
   text-align: center;
   margin-top: 80px;
+}
+
+
+
+@media (max-width: 900px) {
+  .logga {}
+
+  .nav-container-links-and-h1 {
+    display: none;
+  }
 }
