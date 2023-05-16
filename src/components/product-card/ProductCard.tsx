@@ -6,6 +6,7 @@ import { IAllProducts, IProductCard } from "../../interfaces";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import Context from "../../context/Context";
 import { addToCartCollection } from "../../Api";
+import { FacebookShareButton,  FacebookIcon,  } from 'react-share';
 import { Button } from "@mui/material";
 const ProductCard = ({ product }: IProductCard) => {
   const { changeLikedStatus, cartList, setCartList } = useContext(Context);
@@ -13,6 +14,8 @@ const ProductCard = ({ product }: IProductCard) => {
     const newArray: IAllProducts[] = [...cartList, product];
     setCartList(newArray);
   };
+
+  const shareUrl = "https://cool-fashion.vercel.app/"
 
   return (
     <div className="px-2">
@@ -54,6 +57,9 @@ const ProductCard = ({ product }: IProductCard) => {
               sx={{ fontSize: "35px" }}
             /> */}
           </Button>
+          <FacebookShareButton url={shareUrl}>
+  <FacebookIcon size={30} className="shareicons"></FacebookIcon >
+</FacebookShareButton>
         </div>
       </div>
     </div>
