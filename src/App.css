@@ -257,6 +257,11 @@ textarea {
   font-size: 3;
 }
 
+.shareicons{
+  margin-bottom: 6px;
+  margin-left: 12px;
+}
+
 .stronger {
   font-size: 22px;
 }

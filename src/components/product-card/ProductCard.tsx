@@ -40,6 +40,7 @@ const ProductCard = ({ product }: IProductCard) => {
             <FacebookShareButton url={shareUrl}>
               <FacebookIcon size={30} className="shareicons"></FacebookIcon>
             </FacebookShareButton>
+            
         </div>
       </div>
       <div
