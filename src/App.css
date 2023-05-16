@@ -62,7 +62,7 @@ body {
   color: white;
 }
 
-.shareicons{
+.shareicons {
   border-radius: 50%;
 }
 
@@ -180,8 +180,6 @@ textarea {
   cursor: pointer;
 }
 
-
-
 .container {
   display: flex;
   margin-top: 20px;
@@ -220,6 +218,10 @@ textarea {
   margin-left: -230px;
 }
 
+.px-2 {
+  background-color: whitesmoke;
+  padding-bottom: 3rem;
+}
 .heart-icon {
   /* position: absolute;
   bottom: 60px;
@@ -257,7 +259,7 @@ textarea {
   font-size: 3;
 }
 
-.shareicons{
+.shareicons {
   margin-bottom: 6px;
   margin-left: 12px;
 }
@@ -267,10 +269,7 @@ textarea {
 }
 
 .carousel-indicators li {
-  background-color: rgba(100,
-      99,
-      99,
-      0.5);
+  background-color: rgba(100, 99, 99, 0.5);
   /* set the background color of the indicators to semi-transparent white */
   margin-bottom: -70px;
   margin-top: 30px;
@@ -362,10 +361,9 @@ textarea {
   margin-top: 80px;
 }
 
-
-
 @media (max-width: 900px) {
-  .logga {}
+  .logga {
+  }
 
   .nav-container-links-and-h1 {
     display: none;
