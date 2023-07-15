@@ -1,6 +1,4 @@
-## Genomgång av projekt i form av restaurangkassa självbetjäning
-
-### Använder media query för att emulera iPad. Justera webbläsarens storlek till mindre bredd.
+# Cool Fashion - klädesbutik online
 
 ![startsida](readme-ps/1.png)
 ![huvudmeny](readme-ps/2.png)
@@ -10,5 +8,7 @@
 ![checkout](readme-ps/6.png)
 ![checkout](readme-ps/7.png)
 ![checkout](readme-ps/8.png)
+
+### `npm install -force`
 
 ### `npm start`
