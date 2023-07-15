@@ -7,5 +7,8 @@
 ![matmeny](readme-ps/3.png)
 ![dryckesmeny](readme-ps/4.png)
 ![checkout](readme-ps/5.png)
+![checkout](readme-ps/6.png)
+![checkout](readme-ps/7.png)
+![checkout](readme-ps/8.png)
 
 ### `npm start`
