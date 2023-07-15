@@ -1,5 +1,9 @@
 # Cool Fashion - klädesbutik online
 
+### `npm install -force`
+
+### `npm start`
+
 ![startsida](readme-ps/1.png)
 ![huvudmeny](readme-ps/2.png)
 ![matmeny](readme-ps/3.png)
@@ -8,7 +12,3 @@
 ![checkout](readme-ps/6.png)
 ![checkout](readme-ps/7.png)
 ![checkout](readme-ps/8.png)
-
-### `npm install -force`
-
-### `npm start`
